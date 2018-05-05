@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="95eca0a4-b0ab-4d14-ab76-9273735983b7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/random/random/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/db.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/log/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/log/log.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/log/log1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/log/logmirror.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c10.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c101.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c111.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c121.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c130.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c141.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c150.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c161.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c171.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c180.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c191.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c1a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c1b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c1c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c1d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c1e0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c1f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c20.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c200.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c211.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c221.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c230.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c241.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c251.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c260.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c271.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c281.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c290.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c2a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c2b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c2c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c2d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c2e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c2f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c300.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c31.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c311.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c321.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c331.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c340.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c351.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c361.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c371.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c380.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c391.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c3a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c3b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c3c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c3d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c3e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c3f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c400.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c41.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c411.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c421.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c430.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c441.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c451.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c461.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c470.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c481.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c490.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c4a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c51.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c60.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c71.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c81.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/c90.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/ca1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/cb1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/cc0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/cd1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/ce1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/seg0/cf0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/random/service.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/db.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/log/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/log/log.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/log/log1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/log/logmirror.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c10.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c101.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c111.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c121.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c130.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c141.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c150.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c161.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c171.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c180.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c191.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c1a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c1b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c1c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c1d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c1e0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c1f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c20.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c200.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c211.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c221.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c230.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c241.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c251.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c260.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c271.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c281.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c290.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c2a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c2b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c2c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c2d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c2e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c2f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c300.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c31.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c311.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c321.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c331.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c340.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c351.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c361.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c371.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c380.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c391.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c3a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c3b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c3c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c3d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c3e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c3f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c400.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c41.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c411.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c421.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c430.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c441.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c451.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c461.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c470.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c481.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c51.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c60.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c71.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c7d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c7e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c81.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/c90.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/ca1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/cb1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/cc0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/cd1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/ce1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/cf0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/d7b0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/seg0/d7c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/randomDB/service.properties" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="magyart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="textbasedprgbeadando" type="b2602c69:ProjectViewProjectNode" />
+              <item name="textbasedprgbeadando" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="magyart" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95eca0a4-b0ab-4d14-ab76-9273735983b7" name="Default" comment="" />
+      <created>1525537290794</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525537290794</updated>
+      <workItem from="1525537292102" duration="63000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="63000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
