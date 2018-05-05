@@ -41,12 +41,21 @@ public class Player {
         }
     }
 
+    public boolean isAlive(){
+        return currentHealth > 0;
+    }
+
     public int attack(){
         return random.nextInt(maxDamage-minDamage) + minDamage;
     }
 
-    public boolean isAlive(){
-        return currentHealth > 0;
+    public void takeDamage(Enemy enemy){
+        int dmg = enemy.attack();
+        if(dmg >= currentHealth){
+            currentHealth = 0;
+        }else{
+            currentHealth = currentHealth - dmg;
+        }
     }
 
 }

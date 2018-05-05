@@ -22,30 +22,46 @@ public class Enemy {
         this.minDamage = minDamage;
     }
 
-    public Enemy randomEnemy(){
+    public static Enemy skeleton(){
+        return new Enemy("Skeleton",30, 30,15,10);
+    }
+    public static Enemy bandit(){
+        return new Enemy("Bandit",35, 40,25,15);
+    }
+    public static Enemy necromancer(){
+        return  new Enemy("Necromancer",15, 15,30,20);
+    }
+    public void randomEnemy(){
         int enemyTypes = 3;
         int i = random.nextInt(enemyTypes);
 
         if (i == 0){
-            return new Enemy("Skeleton",30, 30,15,10);
+            skeleton();
         }
         if (i == 1){
-            return new Enemy("Bandit",35, 40,25,15);
+            bandit();
         }
         if (i == 2){
-            return  new Enemy("Necromancer",15, 15,30,20);
+            necromancer();
         }
-    }
-
-
-    public int attack(){
-        return random.nextInt(maxDamage-minDamage) + minDamage;
     }
 
     public boolean isAlive(){
         return currentHealth > 0;
     }
 
+    public int attack(){
+        return random.nextInt(maxDamage-minDamage) + minDamage;
+    }
+
+    public void takeDamage(Player player){
+        int dmg = player.attack();
+        if(dmg >= currentHealth){
+            currentHealth = 0;
+        }else{
+            currentHealth = currentHealth - dmg;
+        }
+    }
 
 
 }
