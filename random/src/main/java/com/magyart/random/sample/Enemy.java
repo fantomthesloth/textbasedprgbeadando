@@ -26,8 +26,6 @@ public class Enemy {
         int enemyTypes = 3;
         int i = random.nextInt(enemyTypes);
 
-        Enemy enemy = new Enemy();
-
         if (i == 0){
             return new Enemy("Skeleton",30, 30,15,10);
         }
@@ -37,7 +35,6 @@ public class Enemy {
         if (i == 2){
             return  new Enemy("Necromancer",15, 15,30,20);
         }
-        return enemy;
     }
 
 
