@@ -1,8 +1,6 @@
 package com.magyart.random.sample;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 public class Enemy {
     private String name;
@@ -31,6 +29,7 @@ public class Enemy {
     public static Enemy necromancer(){
         return  new Enemy("Necromancer",15, 15,30,20);
     }
+
     public void randomEnemy(){
         int enemyTypes = 3;
         int i = random.nextInt(enemyTypes);

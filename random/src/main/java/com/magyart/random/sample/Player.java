@@ -31,14 +31,28 @@ public class Player {
 
     Player player = new Player("RandomPlayer",50,50,20,10,5,100,0,1,30);
 
-    public void heal(){
-        if (numberOfPotions > 0){
-            if (currentHealth == maxHealth || (maxHealth - currentHealth) <=20){
-                currentHealth = maxHealth;
-            }else{
-                currentHealth = currentHealth + 20;
-            }
-        }
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = maxHealth;
+    }
+
+    public int getNumberOfPotions() {
+        return numberOfPotions;
+    }
+
+    public void setNumberOfPotions(int numberOfPotions) {
+        this.numberOfPotions = numberOfPotions;
     }
 
     public boolean isAlive(){
