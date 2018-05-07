@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="750.0" onMouseDragged="#dragged" onMousePressed="#pressed" pickOnBounds="false" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #353535;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magyart.random.sample.WelcomeScreen">
+<AnchorPane maxHeight="500.0" maxWidth="750.0" onMouseDragged="#dragged" onMousePressed="#pressed" pickOnBounds="false" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #353535;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magyart.random.sample.WelcomeScreen">
    <children>
       <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #191919;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
