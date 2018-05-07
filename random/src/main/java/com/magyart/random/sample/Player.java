@@ -31,6 +31,14 @@ public class Player {
 
     Player player = new Player("RandomPlayer",50,50,20,10,5,100,0,1,30);
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getMaxHealth() {
         return maxHealth;
     }

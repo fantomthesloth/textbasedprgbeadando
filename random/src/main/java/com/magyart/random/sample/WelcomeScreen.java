@@ -1,12 +1,18 @@
 package com.magyart.random.sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 
 public class WelcomeScreen {
     public TextField playerName;
@@ -32,7 +38,12 @@ public class WelcomeScreen {
         stage.close();
     }
 
-    public void startGame(ActionEvent actionEvent) {
-
+    public void startGame(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/mainWindow.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.show();
+        ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
     }
 }
