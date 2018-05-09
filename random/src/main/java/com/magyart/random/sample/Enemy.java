@@ -3,11 +3,14 @@ package com.magyart.random.sample;
 import java.util.Random;
 
 public class Enemy {
+    Player player = new Player();
+
     private String name;
     private int maxHealth;
     private int currentHealth;
     private int maxDamage;
     private int minDamage;
+
 
     private Random random = new Random();
 
@@ -31,14 +34,14 @@ public class Enemy {
         enemy.setName("Bandit");
         enemy.setMaxHealth(35);
         enemy.setCurrentHealth(40);
-        enemy.setMinDamage(15);
-        enemy.setMaxDamage(25);
+        enemy.setMinDamage(12);
+        enemy.setMaxDamage(18);
     }
     public void necromancer(Enemy enemy){
         enemy.setName("Necromancer");
         enemy.setMaxHealth(15);
         enemy.setCurrentHealth(15);
-        enemy.setMinDamage(20);
+        enemy.setMinDamage(15);
         enemy.setMaxDamage(30);
     }
 
@@ -113,6 +116,5 @@ public class Enemy {
             currentHealth = currentHealth - dmg;
         }
     }
-
 
 }

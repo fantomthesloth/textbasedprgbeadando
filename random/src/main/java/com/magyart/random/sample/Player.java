@@ -13,6 +13,7 @@ public class Player {
     private int currentXp;
     private int level;
     private int gold;
+    private int xpGain = 25;
 
     private Random random = new Random();
 
@@ -131,13 +132,29 @@ public class Player {
     public void heal(){
         if (currentHealth > 0 && numberOfPotions > 0){
             if (currentHealth == maxHealth){}
-            if ((maxHealth - currentHealth) <=20){
+            if ((maxHealth - currentHealth) <= 20){
                 currentHealth = maxHealth;
                 numberOfPotions--;
             }else{
                 currentHealth = currentHealth + 20;
                 numberOfPotions--;
             }
+        }
+    }
+
+    public void leveling(){
+        if(level>1)
+            currentXp += xpGain;
+        else
+            currentXp += 50;
+        if (currentXp >= xpNeeded){
+            xpNeeded = (int) Math.round(xpNeeded * 1.5);
+            xpGain *= 1.25;
+            maxHealth *= 1.3;
+            currentHealth = maxHealth;
+            minDamage *= 1.5;
+            maxDamage *= 1.5;
+            level++;
         }
     }
 }

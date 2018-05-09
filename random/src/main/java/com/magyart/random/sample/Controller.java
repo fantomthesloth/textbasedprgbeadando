@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class Controller implements Initializable {
     @FXML
@@ -20,9 +21,11 @@ public class Controller implements Initializable {
     public TextArea asd;
     @FXML
     public Button gameStarter;
+    public Button healBtn;
+    public Button attackBtn;
 
-    Player player = new Player();
-    Enemy enemy = new Enemy();
+    private Player player = new Player();
+    private Enemy enemy = new Enemy();
 
     double x, y = 0;
 
@@ -45,12 +48,6 @@ public class Controller implements Initializable {
         stage.close();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        asd.setVisible(false);
-        enemy.randomEnemy();
-//        displayStats();
-    }
     public void displayStats(){
         asd.setText("Name: " + player.getName() + "  Lvl: " + player.getLevel() +
                 "\nHealth: " + player.getCurrentHealth()+"/"+player.getMaxHealth() +
@@ -63,6 +60,13 @@ public class Controller implements Initializable {
                 "\neHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
                 "\neDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        asd.setVisible(false);
+        enemy.randomEnemy();
+    }
+
 
     public void startGame(ActionEvent actionEvent) {
         player.setName(namer.getText());
@@ -81,4 +85,19 @@ public class Controller implements Initializable {
         player.heal();
         displayStats();
     }
+
+    public void attack(ActionEvent actionEvent) throws InterruptedException {
+        if(player.isAlive() && enemy.isAlive()) {
+            enemy.takeDamage(player);
+            displayStats();
+            if(enemy.isAlive()) {
+                player.takeDamage(enemy);
+            }else {
+                enemy.randomEnemy();
+                player.leveling();
+            }
+            displayStats();
+        }
+    }
+
 }
