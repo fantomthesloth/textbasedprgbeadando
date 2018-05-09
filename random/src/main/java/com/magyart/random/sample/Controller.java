@@ -26,6 +26,8 @@ public class Controller implements Initializable {
     public Button attackBtn;
     @FXML
     public TextArea logFeed;
+    @FXML
+    public Button test;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -72,6 +74,7 @@ public class Controller implements Initializable {
         healBtn.setVisible(false);
         attackBtn.setVisible(false);
         logFeed.setVisible(false);
+        test.setVisible(false);
         getEnemy();
     }
     public void getEnemy(){
@@ -98,7 +101,6 @@ public class Controller implements Initializable {
     public void attack(ActionEvent actionEvent) throws InterruptedException {
         int playerDamage = player.attack();
         int enemyDamage = enemy.attack();
-
         if(player.isAlive() && enemy.isAlive()) {
             enemy.takeDamage(playerDamage);
             enemyStats();
@@ -110,9 +112,22 @@ public class Controller implements Initializable {
                 logFeed.appendText("\nYou have defeated " + enemy.getName() + "!");
                 player.leveling();
                 player.setGold(player.getGold()+5);
-                getEnemy();
+                choice();
             }
             playerStats();
         }
+    }
+
+    public void choice() {
+        logFeed.appendText("\n\nWhat will you do?");
+        attackBtn.setVisible(false);
+        healBtn.setVisible(false);
+        test.setVisible(true);
+        test.setOnAction(event -> {
+            getEnemy();
+            attackBtn.setVisible(true);
+            healBtn.setVisible(true);
+            test.setVisible(false);
+        });
     }
 }
