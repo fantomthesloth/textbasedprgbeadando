@@ -77,7 +77,7 @@ public class Login {
         if(txtLoginUsr.getText().equals("asd") && txtLoginPswd.getText().equals("asd")) {
             msgBoxLogin.setStyle(style);
             msgBoxLogin.setText("You have logged in, please wait..");
-            root = FXMLLoader.load(getClass().getResource("/FXML/welcomeScreen.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/FXML/mainWindow.fxml"));
             stage.setScene(new Scene(root));
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
