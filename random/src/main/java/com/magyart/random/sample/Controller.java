@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 
 public class Controller implements Initializable {
     @FXML
@@ -21,8 +20,12 @@ public class Controller implements Initializable {
     public TextArea asd;
     @FXML
     public Button gameStarter;
+    @FXML
     public Button healBtn;
+    @FXML
     public Button attackBtn;
+    @FXML
+    public TextArea logFeed;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -46,58 +49,70 @@ public class Controller implements Initializable {
         final Node source = (Node) actionEvent.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
+
     }
 
-    public void displayStats(){
+    public void playerStats(){
         asd.setText("Name: " + player.getName() + "  Lvl: " + player.getLevel() +
                 "\nHealth: " + player.getCurrentHealth()+"/"+player.getMaxHealth() +
                 "\nDamage: " + player.getMinDamage()+" ~ "+player.getMaxDamage() +
                 "\nXP: " + player.getCurrentXp()+"/"+player.getXpNeeded() +
                 "\nPotions: " + player.getNumberOfPotions() +
-                "\nGold: " + player.getGold() +
+                "\nGold: " + player.getGold());
+    }
 
-                "\n\neName: " + enemy.getName() +
-                "\neHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
-                "\neDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
+    public void enemyStats(){
+        logFeed.setText("You have encountered with " + enemy.getName() + "!" + "\neHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
+                                                                                    "\neDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         asd.setVisible(false);
-        enemy.randomEnemy();
+        healBtn.setVisible(false);
+        attackBtn.setVisible(false);
+        logFeed.setVisible(false);
+        getEnemy();
     }
-
+    public void getEnemy(){
+        enemy.randomEnemy();
+        enemyStats();
+    }
 
     public void startGame(ActionEvent actionEvent) {
         player.setName(namer.getText());
         namer.setVisible(false);
         gameStarter.setVisible(false);
         asd.setVisible(true);
-        displayStats();
-    }
-
-    public void ptakeDamage(ActionEvent actionEvent) {
-        player.takeDamage(enemy);
-        displayStats();
+        healBtn.setVisible(true);
+        attackBtn.setVisible(true);
+        logFeed.setVisible(true);
+        playerStats();
     }
 
     public void Heal(ActionEvent actionEvent) {
         player.heal();
-        displayStats();
+        playerStats();
     }
 
     public void attack(ActionEvent actionEvent) throws InterruptedException {
+        int playerDamage = player.attack();
+        int enemyDamage = enemy.attack();
+
         if(player.isAlive() && enemy.isAlive()) {
-            enemy.takeDamage(player);
-            displayStats();
+            enemy.takeDamage(playerDamage);
+            enemyStats();
+            logFeed.appendText("\nYou have dealt " +playerDamage+" damage to " + enemy.getName() + "!");
             if(enemy.isAlive()) {
-                player.takeDamage(enemy);
+                logFeed.appendText("\nYou were hit for " + enemyDamage + " damage!");
+                player.takeDamage(enemyDamage);
             }else {
-                enemy.randomEnemy();
+                logFeed.appendText("\nYou have defeated " + enemy.getName() + "!");
                 player.leveling();
+                player.setGold(player.getGold()+5);
+                getEnemy();
             }
-            displayStats();
+            playerStats();
         }
     }
-
 }

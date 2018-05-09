@@ -19,10 +19,10 @@
          </children>
       </HBox>
       <TextField fx:id="namer" layoutX="301.0" layoutY="88.0" promptText="name" />
-      <Button fx:id="gameStarter" layoutX="349.0" layoutY="173.0" mnemonicParsing="false" onAction="#startGame" text="Button" />
-      <TextArea fx:id="asd" editable="false" focusTraversable="false" layoutX="537.0" layoutY="32.0" mouseTransparent="true" prefHeight="255.0" prefWidth="180.0" wrapText="true" />
-      <Button layoutX="432.0" layoutY="305.0" mnemonicParsing="false" onAction="#ptakeDamage" text="pDamage" />
-      <Button fx:id="healBtn" layoutX="432.0" layoutY="262.0" mnemonicParsing="false" onAction="#Heal" text="Heal" />
-      <Button fx:id="attackBtn" layoutX="366.0" layoutY="262.0" mnemonicParsing="false" onAction="#attack" text="Attack" />
+      <Button fx:id="gameStarter" layoutX="349.0" layoutY="173.0" mnemonicParsing="false" onAction="#startGame"  text="Start Game" />
+      <TextArea fx:id="asd" editable="false" focusTraversable="false" layoutX="537.0" layoutY="32.0" mouseTransparent="true" prefHeight="136.0" prefWidth="180.0" wrapText="true" />
+      <Button fx:id="healBtn" layoutX="135.0" layoutY="262.0" mnemonicParsing="false" onAction="#Heal" text="Heal" />
+      <Button fx:id="attackBtn" layoutX="61.0" layoutY="262.0" mnemonicParsing="false" onAction="#attack" text="Attack" />
+      <TextArea fx:id="logFeed" editable="false" layoutX="23.0" layoutY="306.0" mouseTransparent="true" prefHeight="126.0" prefWidth="326.0" wrapText="true" />
    </children>
 </AnchorPane>

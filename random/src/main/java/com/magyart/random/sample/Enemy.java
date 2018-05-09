@@ -108,8 +108,8 @@ public class Enemy {
         return random.nextInt(maxDamage-minDamage) + minDamage;
     }
 
-    public void takeDamage(Player player){
-        int dmg = player.attack();
+
+    public void takeDamage(int dmg){
         if(dmg >= currentHealth){
             currentHealth = 0;
         }else{

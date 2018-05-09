@@ -120,8 +120,7 @@ public class Player {
         return random.nextInt(maxDamage-minDamage) + minDamage;
     }
 
-    public void takeDamage(Enemy enemy){
-        int dmg = enemy.attack();
+    public void takeDamage(int dmg){
         if(dmg >= currentHealth){
             currentHealth = 0;
         }else{
@@ -132,11 +131,11 @@ public class Player {
     public void heal(){
         if (currentHealth > 0 && numberOfPotions > 0){
             if (currentHealth == maxHealth){}
-            if ((maxHealth - currentHealth) <= 20){
+            if ((maxHealth - currentHealth) <= (currentHealth * 0.4)){
                 currentHealth = maxHealth;
                 numberOfPotions--;
             }else{
-                currentHealth = currentHealth + 20;
+                currentHealth = (int) (currentHealth + Math.round(maxHealth*0.4));
                 numberOfPotions--;
             }
         }
@@ -154,6 +153,7 @@ public class Player {
             currentHealth = maxHealth;
             minDamage *= 1.5;
             maxDamage *= 1.5;
+            numberOfPotions = 5;
             level++;
         }
     }
