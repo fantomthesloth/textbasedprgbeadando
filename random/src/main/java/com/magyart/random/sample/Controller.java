@@ -27,7 +27,9 @@ public class Controller implements Initializable {
     @FXML
     public TextArea logFeed;
     @FXML
-    public Button test;
+    public Button keepGoing;
+    @FXML
+    public Button toTownBtn;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -74,7 +76,8 @@ public class Controller implements Initializable {
         healBtn.setVisible(false);
         attackBtn.setVisible(false);
         logFeed.setVisible(false);
-        test.setVisible(false);
+        keepGoing.setVisible(false);
+        toTownBtn.setVisible(false);
         getEnemy();
     }
     public void getEnemy(){
@@ -122,12 +125,16 @@ public class Controller implements Initializable {
         logFeed.appendText("\n\nWhat will you do?");
         attackBtn.setVisible(false);
         healBtn.setVisible(false);
-        test.setVisible(true);
-        test.setOnAction(event -> {
+        keepGoing.setVisible(true);
+        toTownBtn.setVisible(true);
+        keepGoing.setOnAction(event -> {
             getEnemy();
             attackBtn.setVisible(true);
             healBtn.setVisible(true);
-            test.setVisible(false);
+            keepGoing.setVisible(false);
+        });
+        toTownBtn.setOnAction(event -> {
+            logFeed.setText("You decided to go back to town!\n\nWhat will you do now?");
         });
     }
 }
