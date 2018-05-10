@@ -31,10 +31,6 @@ public class Town {
         return upgradeWeapon;
     }
 
-    public void setUpgradeWeapon(int upgradeWeapon) {
-        this.upgradeWeapon = upgradeWeapon;
-    }
-
     public void healUp(Player player){
         if(player.getGold() >= healUp) {
             player.setCurrentHealth(player.getMaxHealth());
@@ -51,9 +47,17 @@ public class Town {
 
     public void upgradeWeapon(Player player){
         if(player.getGold() >= upgradeWeapon) {
-            player.setMinDamage((int) Math.round(player.getMinDamage() * 1.3));
-            player.setMaxDamage((int) Math.round(player.getMaxDamage() * 1.3));
+            player.setMinDamage((int) Math.round(player.getMinDamage() * 1.4));
+            player.setMaxDamage((int) Math.round(player.getMaxDamage() * 1.4));
             player.setGold(player.getGold() - upgradeWeapon);
+            upgradeWeapon += 10;
+        }
+    }
+
+    public void setUpTown(Player player){
+        if(player.getLevel() > 1){
+            setHealUp((10 + (5 * (player.getLevel()-1))));
+            setRefillPotions((15 + (7 * (player.getLevel() - 1))));
         }
     }
 }

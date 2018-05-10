@@ -42,12 +42,12 @@ public class UserDAOImpl implements UserDAO {
         entityManager.getTransaction().commit();
     }
 
-    public UserEntity loggedIn(String username, String password) throws Exception{
+    /*public UserEntity loggedIn(String username, String password) throws Exception{
         if(username == null || password == null){
             throw new IllegalArgumentException("Username or password not given!");
         }
         try{
             Query query = entityManager.createQuery("select u from UserEntity ")
         }
-    }
+    }*/
 }

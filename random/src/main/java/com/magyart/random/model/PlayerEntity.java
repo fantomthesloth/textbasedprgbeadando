@@ -52,7 +52,10 @@ public class PlayerEntity {
     private int gold;
 
     @Column(name = "XP_GAIN")
-    private int xpGain = 25;
+    private int xpGain;
+
+    @Column(name= "GOLD_GAIN")
+    private int goldGain;
 
     public PlayerEntity(Player player){
         this.name = player.getName();
@@ -65,6 +68,8 @@ public class PlayerEntity {
         this.currentXp = player.getCurrentXp();
         this.level = player.getLevel();
         this.gold = player.getGold();
+        this.xpGain = player.getXpGain();
+        this.goldGain = player.getGoldGain();
     }
 
 

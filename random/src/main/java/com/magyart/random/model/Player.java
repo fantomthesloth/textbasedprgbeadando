@@ -14,6 +14,7 @@ public class Player {
     private int level;
     private int gold;
     private int xpGain = 25;
+    private int goldGain = 5;
 
     private Random random = new Random();
 
@@ -26,8 +27,8 @@ public class Player {
         this.numberOfPotions = 5;
         this.xpNeeded = 100;
         this.currentXp = 0;
-        this.level = 1;
-        this.gold = 500;
+        this.level = 2;
+        this.gold = 30;
     }
 
     public String getName() {
@@ -40,10 +41,6 @@ public class Player {
 
     public int getMaxHealth() {
         return maxHealth;
-    }
-
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
     }
 
     public int getCurrentHealth() {
@@ -74,24 +71,12 @@ public class Player {
         return xpNeeded;
     }
 
-    public void setXpNeeded(int xpNeeded) {
-        this.xpNeeded = xpNeeded;
-    }
-
     public int getCurrentXp() {
         return currentXp;
     }
 
-    public void setCurrentXp(int currentXp) {
-        this.currentXp = currentXp;
-    }
-
     public int getLevel() {
         return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public int getGold() {
@@ -112,6 +97,10 @@ public class Player {
 
     public int getXpGain() {
         return xpGain;
+    }
+
+    public int getGoldGain() {
+        return goldGain;
     }
 
     public boolean isAlive() {
@@ -148,6 +137,7 @@ public class Player {
     public void leveling(Enemy enemy, Town town) {
         currentXp += xpGain;
         if (currentXp >= xpNeeded) {
+            level++;
             xpNeeded = (int) Math.round(xpNeeded * 1.5);
             xpGain *= 1.25;
             maxHealth *= 1.3;
@@ -155,15 +145,14 @@ public class Player {
             minDamage *= 1.2;
             maxDamage *= 1.2;
             numberOfPotions = 5;
-            level++;
-            town.setHealUp(town.getHealUp() + 5);
-            town.setRefillPotions(town.getRefillPotions() + 7);
-            town.setUpgradeWeapon(town.getUpgradeWeapon() + 12);
-            enemy.setMaxHealth((int) Math.round(getMaxHealth() * (1.5)));
-            enemy.setCurrentHealth(enemy.getMaxHealth());
-            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * (1.4 )));
-            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * (1.4 )));
+            goldGain = (int) Math.round(goldGain*1.6);
 
+            town.setUpTown(this);
+
+            enemy.setMaxHealth((int) Math.round(enemy.getMaxHealth() * Math.pow(1.2, (getLevel()-1))));
+            enemy.setCurrentHealth(enemy.getMaxHealth());
+            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * Math.pow(1.5, (getLevel()-1))));
+            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * Math.pow(1.5, (getLevel()-1))));
         }
     }
 

@@ -1,6 +1,7 @@
 package com.magyart.random.controllers;
 
 import com.magyart.random.model.Enemy;
+import com.magyart.random.model.Fight;
 import com.magyart.random.model.Player;
 import com.magyart.random.model.Town;
 import javafx.event.ActionEvent;
@@ -45,6 +46,7 @@ public class Controller implements Initializable {
     private Player player = new Player();
     private Enemy enemy = new Enemy();
     private Town town = new Town();
+    private Fight fight = new Fight();
 
     double x, y = 0;
 
@@ -78,8 +80,15 @@ public class Controller implements Initializable {
     }
 
     public void enemyStats(){
-        logFeed.setText("You have encountered with [" + enemy.getName() + "] !" + "\neHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
-                                                                                    "\neDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
+        logFeed.setText("You have encountered with [" + enemy.getName() + "] !" + "\nHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
+                                                                                    "\nDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
+    }
+
+    public void townStat(){
+        logFeed.setText("You are in the town now!\nWhat will you do now?\n\n" +
+                "Heal - " + town.getHealUp() + " gold\n" +
+                "Refill potions - " + town.getRefillPotions() + " gold\n" +
+                "Upgrade weapon - " + town.getUpgradeWeapon() + " gold");
     }
 
     @Override
@@ -94,9 +103,13 @@ public class Controller implements Initializable {
         townRefill.setVisible(false);
         townUpgrade.setVisible(false);
         toDungeon.setVisible(false);
+        enemy.setUpEnemy(player, enemy);
+        town.setUpTown(player);
     }
+
     public void getEnemy(){
         enemy.randomEnemy();
+        enemy.setUpEnemy(player,enemy);
         enemyStats();
     }
 
@@ -119,23 +132,19 @@ public class Controller implements Initializable {
     }
 
     public void attack(ActionEvent actionEvent) throws InterruptedException {
-        int playerDamage = player.attack();
-        int enemyDamage = enemy.attack();
-        if(player.isAlive() && enemy.isAlive()) {
-            enemy.takeDamage(playerDamage);
-            enemyStats();
-            logFeed.appendText("\nYou have dealt [" +playerDamage+"] damage to [" + enemy.getName() + "] !");
-            if(enemy.isAlive()) {
-                logFeed.appendText("\nYou were hit for [" + enemyDamage + "] damage!");
-                player.takeDamage(enemyDamage);
-            }else {
-                logFeed.setText("You have defeated [" + enemy.getName() + "] !\nYou have earned [" + player.getXpGain() + "xp] !\nYou have found [5 gold] !");
-                player.leveling(enemy, town);
-                player.setGold(player.getGold()+ 20);
-                choice();
-            }
-            playerStats();
+
+        fight.fight(player,enemy,town);
+        playerStats();
+        enemyStats();
+
+        if (!enemy.isAlive()) {
+            choice();
+            logFeed.setText("\nYou have defeated [" + enemy.getName() + "]!\n\nYou have earned [" + player.getXpGain() + "xp]!\n\nYou have found [5 gold]!");
+        }else{
+            logFeed.appendText("\n\nYou have dealt [" + fight.getPlayerDamage() +"] damage to [" + enemy.getName() + "] !");
+            logFeed.appendText("\nYou were hit for [" + fight.getEnemyDamage() + "] damage!");
         }
+
 
     }
 
@@ -174,11 +183,6 @@ public class Controller implements Initializable {
         townRefill.setVisible(true);
         townUpgrade.setVisible(true);
 
-        logFeed.setText("You are in the town now!\nWhat will you do now?\n\n" +
-                "Heal - " + town.getHealUp() + " gold\n" +
-                "Refill potions - " + town.getRefillPotions() + " gold\n" +
-                "Upgrade weapon - " + town.getUpgradeWeapon() + " gold");
-
         townHeal.setOnAction(event -> {
             town.healUp(player);
             playerStats();
@@ -192,12 +196,15 @@ public class Controller implements Initializable {
         townUpgrade.setOnAction(event -> {
             town.upgradeWeapon(player);
             playerStats();
+            townStat();
         });
 
         toDungeon.setOnAction(event -> {
             toDungeon.setVisible(false);
             keepGoing();
         });
+
+        townStat();
 
     }
 }
