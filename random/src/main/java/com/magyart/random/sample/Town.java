@@ -36,27 +36,24 @@ public class Town {
     }
 
     public void healUp(Player player){
-        player.setCurrentHealth(player.getMaxHealth());
-        player.setGold(player.getGold() - healUp);
-        if(player.getGold() < healUp){
-            return;
+        if(player.getGold() >= healUp) {
+            player.setCurrentHealth(player.getMaxHealth());
+            player.setGold(player.getGold() - healUp);
         }
     }
 
     public void refillPotions(Player player){
-        player.setNumberOfPotions(5);
-        player.setGold(player.getGold() - refillPotions);
-        if(player.getGold() < refillPotions){
-            return;
+        if(player.getGold() >= refillPotions) {
+            player.setNumberOfPotions(5);
+            player.setGold(player.getGold() - refillPotions);
         }
     }
 
     public void upgradeWeapon(Player player){
-        player.setMinDamage((int) Math.round(player.getMinDamage() * 1.3));
-        player.setMaxDamage((int) Math.round(player.getMaxDamage() * 1.3));
-        player.setGold(player.getGold() - upgradeWeapon);
-        if(player.getGold() < upgradeWeapon){
-            return;
+        if(player.getGold() >= upgradeWeapon) {
+            player.setMinDamage((int) Math.round(player.getMinDamage() * 1.3));
+            player.setMaxDamage((int) Math.round(player.getMaxDamage() * 1.3));
+            player.setGold(player.getGold() - upgradeWeapon);
         }
     }
 }

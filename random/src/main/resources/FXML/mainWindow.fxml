@@ -20,11 +20,14 @@
       </HBox>
       <TextField fx:id="namer" layoutX="301.0" layoutY="88.0" promptText="name" />
       <Button fx:id="gameStarter" layoutX="349.0" layoutY="173.0" mnemonicParsing="false" onAction="#startGame" text="Start Game" />
-      <TextArea fx:id="asd" editable="false" focusTraversable="false" layoutX="537.0" layoutY="32.0" mouseTransparent="true" prefHeight="136.0" prefWidth="180.0" wrapText="true" />
-      <Button fx:id="healBtn" layoutX="135.0" layoutY="262.0" mnemonicParsing="false" onAction="#Heal" text="Heal" />
-      <Button fx:id="attackBtn" layoutX="61.0" layoutY="262.0" mnemonicParsing="false" onAction="#attack" text="Attack" />
+      <TextArea fx:id="asd" editable="false" focusTraversable="false" layoutX="537.0" layoutY="32.0" mouseTransparent="true" prefHeight="126.0" prefWidth="180.0" wrapText="true" />
+      <Button fx:id="healBtn" layoutX="94.0" layoutY="275.0" mnemonicParsing="false" onAction="#Heal" text="Heal" />
+      <Button fx:id="attackBtn" layoutX="23.0" layoutY="275.0" mnemonicParsing="false" onAction="#attack" text="Attack" />
       <TextArea fx:id="logFeed" editable="false" layoutX="23.0" layoutY="306.0" mouseTransparent="true" prefHeight="126.0" prefWidth="326.0" wrapText="true" />
-      <Button fx:id="keepGoing" layoutX="48.0" layoutY="262.0" mnemonicParsing="false" text="Keep going" />
-      <Button fx:id="toTownBtn" layoutX="186.0" layoutY="262.0" mnemonicParsing="false" text="To town" />
+      <Button fx:id="keepGoing" layoutX="272.0" layoutY="275.0" mnemonicParsing="false" text="Keep going" />
+      <Button fx:id="toTownBtn" layoutX="198.0" layoutY="275.0" mnemonicParsing="false" text="To town" />
+      <Button fx:id="townHeal" layoutX="361.0" layoutY="382.0" mnemonicParsing="false" text="Town Heal" />
+      <Button fx:id="townRefill" layoutX="361.0" layoutY="344.0" mnemonicParsing="false" text="Refill potions" />
+      <Button fx:id="townUpgrade" layoutX="361.0" layoutY="306.0" mnemonicParsing="false" text="Upgrade weapon" />
    </children>
 </AnchorPane>

@@ -27,7 +27,7 @@ public class Player {
         this.xpNeeded = 100;
         this.currentXp = 0;
         this.level = 1;
-        this.gold = 30;
+        this.gold = 500;
     }
 
     public String getName() {
@@ -110,47 +110,53 @@ public class Player {
         this.numberOfPotions = numberOfPotions;
     }
 
-    public boolean isAlive(){
+    public int getXpGain() {
+        return xpGain;
+    }
+
+    public boolean isAlive() {
         return currentHealth > 0;
     }
 
-    public int attack(){
-        return random.nextInt(maxDamage-minDamage) + minDamage;
+    public int attack() {
+        return random.nextInt(maxDamage - minDamage) + minDamage;
     }
 
-    public void takeDamage(int dmg){
-        if(dmg >= currentHealth){
+    public void takeDamage(int dmg) {
+        if (dmg >= currentHealth) {
             currentHealth = 0;
-        }else{
+        } else {
             currentHealth = currentHealth - dmg;
         }
     }
 
-    public void heal(){
-        if (currentHealth > 0 && numberOfPotions > 0){
-            if (currentHealth == maxHealth){}
-            if ((maxHealth - currentHealth) <= (currentHealth * 0.4)){
+    public void heal() {
+        if (currentHealth > 0 && numberOfPotions > 0) {
+            if (currentHealth == maxHealth) {
+                currentHealth = maxHealth;
+            }
+            if ((maxHealth - currentHealth) <= (maxHealth * 0.4)) {
                 currentHealth = maxHealth;
                 numberOfPotions--;
-            }else{
-                currentHealth = (int) (currentHealth + Math.round(maxHealth*0.4));
+            } else {
+                currentHealth = (int) (currentHealth + Math.round(maxHealth * 0.4));
                 numberOfPotions--;
             }
         }
     }
 
-    public void leveling(Town town){
-        if(level>1)
+    public void leveling(Town town) {
+        if (level > 1)
             currentXp += xpGain;
         else
             currentXp += 50;
-        if (currentXp >= xpNeeded){
+        if (currentXp >= xpNeeded) {
             xpNeeded = (int) Math.round(xpNeeded * 1.5);
             xpGain *= 1.25;
             maxHealth *= 1.3;
             currentHealth = maxHealth;
-            minDamage *= 1.5;
-            maxDamage *= 1.5;
+            minDamage *= 1.2;
+            maxDamage *= 1.2;
             numberOfPotions = 5;
             level++;
             town.setHealUp(town.getHealUp() + 5);
@@ -158,4 +164,6 @@ public class Player {
             town.setUpgradeWeapon(town.getUpgradeWeapon() + 12);
         }
     }
+
 }
+

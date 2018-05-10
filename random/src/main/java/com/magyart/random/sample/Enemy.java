@@ -24,24 +24,24 @@ public class Enemy {
 
     public void skeleton(Enemy enemy){
         enemy.setName("Skeleton");
-        enemy.setMaxHealth(30);
-        enemy.setCurrentHealth(30);
-        enemy.setMinDamage(10);
-        enemy.setMaxDamage(15);
+        enemy.setMaxHealth(100);
+        enemy.setCurrentHealth(100);
+        enemy.setMinDamage(3);
+        enemy.setMaxDamage(5);
     }
     public void bandit(Enemy enemy){
         enemy.setName("Bandit");
         enemy.setMaxHealth(35);
         enemy.setCurrentHealth(40);
-        enemy.setMinDamage(12);
-        enemy.setMaxDamage(18);
+        enemy.setMinDamage(5);
+        enemy.setMaxDamage(10);
     }
     public void necromancer(Enemy enemy){
         enemy.setName("Necromancer");
-        enemy.setMaxHealth(15);
-        enemy.setCurrentHealth(15);
-        enemy.setMinDamage(15);
-        enemy.setMaxDamage(30);
+        enemy.setMaxHealth(100);
+        enemy.setCurrentHealth(100);
+        enemy.setMinDamage(5);
+        enemy.setMaxDamage(10);
     }
 
     public String getName() {

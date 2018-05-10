@@ -30,6 +30,12 @@ public class Controller implements Initializable {
     public Button keepGoing;
     @FXML
     public Button toTownBtn;
+    @FXML
+    public Button townHeal;
+    @FXML
+    public Button townRefill;
+    @FXML
+    public Button townUpgrade;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -67,7 +73,7 @@ public class Controller implements Initializable {
     }
 
     public void enemyStats(){
-        logFeed.setText("You have encountered with " + enemy.getName() + "!" + "\neHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
+        logFeed.setText("You have encountered with [" + enemy.getName() + "] !" + "\neHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
                                                                                     "\neDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
     }
 
@@ -79,7 +85,9 @@ public class Controller implements Initializable {
         logFeed.setVisible(false);
         keepGoing.setVisible(false);
         toTownBtn.setVisible(false);
-        getEnemy();
+        townHeal.setVisible(false);
+        townRefill.setVisible(false);
+        townUpgrade.setVisible(false);
     }
     public void getEnemy(){
         enemy.randomEnemy();
@@ -90,10 +98,12 @@ public class Controller implements Initializable {
         player.setName(namer.getText());
         namer.setVisible(false);
         gameStarter.setVisible(false);
-        asd.setVisible(true);
-        healBtn.setVisible(true);
-        attackBtn.setVisible(true);
+        healBtn.setVisible(false);
+        attackBtn.setVisible(false);
+
         logFeed.setVisible(true);
+        asd.setVisible(true);
+        inTown();
         playerStats();
     }
 
@@ -108,34 +118,77 @@ public class Controller implements Initializable {
         if(player.isAlive() && enemy.isAlive()) {
             enemy.takeDamage(playerDamage);
             enemyStats();
-            logFeed.appendText("\nYou have dealt " +playerDamage+" damage to " + enemy.getName() + "!");
+            logFeed.appendText("\nYou have dealt [" +playerDamage+"] damage to [" + enemy.getName() + "] !");
             if(enemy.isAlive()) {
-                logFeed.appendText("\nYou were hit for " + enemyDamage + " damage!");
+                logFeed.appendText("\nYou were hit for [" + enemyDamage + "] damage!");
                 player.takeDamage(enemyDamage);
             }else {
-                logFeed.appendText("\nYou have defeated " + enemy.getName() + "!");
+                logFeed.setText("You have defeated [" + enemy.getName() + "] !\nYou have earned [" + player.getXpGain() + "xp] !\nYou have found [5 gold] !");
                 player.leveling(town);
                 player.setGold(player.getGold()+5);
                 choice();
             }
             playerStats();
         }
+
     }
 
     public void choice() {
-        logFeed.appendText("\n\nWhat will you do?");
         attackBtn.setVisible(false);
         healBtn.setVisible(false);
         keepGoing.setVisible(true);
         toTownBtn.setVisible(true);
         keepGoing.setOnAction(event -> {
-            getEnemy();
-            attackBtn.setVisible(true);
-            healBtn.setVisible(true);
-            keepGoing.setVisible(false);
+            keepGoing();
         });
         toTownBtn.setOnAction(event -> {
-            logFeed.setText("You decided to go back to town!\n\nWhat will you do now?");
+            inTown();
         });
+    }
+    public void keepGoing(){
+        attackBtn.setVisible(true);
+        healBtn.setVisible(true);
+        keepGoing.setVisible(false);
+        toTownBtn.setVisible(false);
+        townHeal.setVisible(false);
+        townRefill.setVisible(false);
+        townUpgrade.setVisible(false);
+
+        getEnemy();
+
+    }
+    public void inTown(){
+        attackBtn.setVisible(false);
+        healBtn.setVisible(false);
+        toTownBtn.setVisible(false);
+        keepGoing.setVisible(true);
+        townHeal.setVisible(true);
+        townRefill.setVisible(true);
+        townUpgrade.setVisible(true);
+
+        logFeed.setText("You are in the town now!\nWhat will you do now?\n\n" +
+                "Heal - " + town.getHealUp() + " gold\n" +
+                "Refill potions - " + town.getRefillPotions() + " gold\n" +
+                "Upgrade weapon - " + town.getUpgradeWeapon() + " gold");
+
+        townHeal.setOnAction(event -> {
+            town.healUp(player);
+            playerStats();
+        });
+
+        townRefill.setOnAction(event -> {
+            town.refillPotions(player);
+            playerStats();
+        });
+
+        townUpgrade.setOnAction(event -> {
+            town.upgradeWeapon(player);
+            playerStats();
+        });
+
+        keepGoing.setOnAction(event -> {
+            keepGoing();
+        });
+
     }
 }
