@@ -3,7 +3,6 @@ package com.magyart.random.sample;
 import java.util.Random;
 
 public class Enemy {
-    Player player = new Player();
 
     private String name;
     private int maxHealth;
@@ -15,7 +14,7 @@ public class Enemy {
     private Random random = new Random();
 
 
-    public Enemy() {
+    Enemy() {
         this.name = name;
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;

@@ -33,6 +33,7 @@ public class Controller implements Initializable {
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
+    private Town town = new Town();
 
     double x, y = 0;
 
@@ -113,7 +114,7 @@ public class Controller implements Initializable {
                 player.takeDamage(enemyDamage);
             }else {
                 logFeed.appendText("\nYou have defeated " + enemy.getName() + "!");
-                player.leveling();
+                player.leveling(town);
                 player.setGold(player.getGold()+5);
                 choice();
             }

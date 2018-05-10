@@ -17,7 +17,7 @@ public class Player {
 
     private Random random = new Random();
 
-    public Player() {
+    Player() {
         this.name = name;
         this.maxHealth = 50;
         this.currentHealth = 50;
@@ -29,8 +29,6 @@ public class Player {
         this.level = 1;
         this.gold = 30;
     }
-
-    //Player player = new Player("RandomPlayer",50,50,20,10,5,100,0,1,30);
 
     public String getName() {
         return name;
@@ -141,7 +139,7 @@ public class Player {
         }
     }
 
-    public void leveling(){
+    public void leveling(Town town){
         if(level>1)
             currentXp += xpGain;
         else
@@ -155,6 +153,9 @@ public class Player {
             maxDamage *= 1.5;
             numberOfPotions = 5;
             level++;
+            town.setHealUp(town.getHealUp() + 5);
+            town.setRefillPotions(town.getRefillPotions() + 7);
+            town.setUpgradeWeapon(town.getUpgradeWeapon() + 12);
         }
     }
 }
