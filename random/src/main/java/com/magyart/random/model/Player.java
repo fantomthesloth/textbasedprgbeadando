@@ -27,7 +27,7 @@ public class Player {
         this.numberOfPotions = 5;
         this.xpNeeded = 100;
         this.currentXp = 0;
-        this.level = 2;
+        this.level = 1;
         this.gold = 30;
     }
 

@@ -21,7 +21,7 @@ public class Controller implements Initializable {
     @FXML
     public TextField namer;
     @FXML
-    public TextArea asd;
+    public TextArea playerStatTA;
     @FXML
     public Button gameStarter;
     @FXML
@@ -71,7 +71,7 @@ public class Controller implements Initializable {
     }
 
     public void playerStats(){
-        asd.setText("Name: " + player.getName() + "  Lvl: " + player.getLevel() +
+        playerStatTA.setText("Name: " + player.getName() + "  Lvl: " + player.getLevel() +
                 "\nHealth: " + player.getCurrentHealth()+"/"+player.getMaxHealth() +
                 "\nDamage: " + player.getMinDamage()+" ~ "+player.getMaxDamage() +
                 "\nXP: " + player.getCurrentXp()+"/"+player.getXpNeeded() +
@@ -93,7 +93,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        asd.setVisible(false);
+        playerStatTA.setVisible(false);
         healBtn.setVisible(false);
         attackBtn.setVisible(false);
         logFeed.setVisible(false);
@@ -121,7 +121,7 @@ public class Controller implements Initializable {
         attackBtn.setVisible(false);
 
         logFeed.setVisible(true);
-        asd.setVisible(true);
+        playerStatTA.setVisible(true);
         inTown();
         playerStats();
     }
@@ -137,15 +137,13 @@ public class Controller implements Initializable {
         playerStats();
         enemyStats();
 
+        logFeed.appendText("\n\nYou have dealt [" + fight.getPlayerDamage() +"] damage to [" + enemy.getName() + "] !");
+        logFeed.appendText("\nYou were hit for [" + fight.getEnemyDamage() + "] damage!");
+
         if (!enemy.isAlive()) {
             choice();
-            logFeed.setText("\nYou have defeated [" + enemy.getName() + "]!\n\nYou have earned [" + player.getXpGain() + "xp]!\n\nYou have found [5 gold]!");
-        }else{
-            logFeed.appendText("\n\nYou have dealt [" + fight.getPlayerDamage() +"] damage to [" + enemy.getName() + "] !");
-            logFeed.appendText("\nYou were hit for [" + fight.getEnemyDamage() + "] damage!");
+            logFeed.setText("You have defeated [" + enemy.getName() + "]!\n\nYou have earned [" + player.getXpGain() + "xp]!\nYou have found [" + player.getGoldGain() +" gold]!");
         }
-
-
     }
 
     public void choice() {

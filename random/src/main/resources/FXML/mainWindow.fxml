@@ -21,7 +21,7 @@
       </HBox>
       <TextField fx:id="namer" layoutX="252.0" layoutY="61.0" promptText="name" />
       <Button fx:id="gameStarter" layoutX="289.0" layoutY="110.0" mnemonicParsing="false" onAction="#startGame" text="Start Game" />
-      <TextArea fx:id="asd" editable="false" focusTraversable="false" layoutX="23.0" layoutY="48.0" mouseTransparent="true" prefHeight="134.0" prefWidth="180.0" stylesheets="@../CSS/style.css" wrapText="true">
+      <TextArea fx:id="playerStatTA" editable="false" focusTraversable="false" layoutX="23.0" layoutY="48.0" mouseTransparent="true" prefHeight="134.0" prefWidth="180.0" stylesheets="@../CSS/style.css" wrapText="true">
          <styleClass>
             <String fx:value="viewport" />
             <String fx:value="text-area" />
