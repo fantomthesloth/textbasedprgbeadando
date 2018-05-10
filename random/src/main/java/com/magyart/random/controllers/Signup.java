@@ -1,4 +1,4 @@
-package com.magyart.random.sample;
+package com.magyart.random.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

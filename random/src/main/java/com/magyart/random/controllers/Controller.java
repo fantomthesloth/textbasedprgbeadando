@@ -1,5 +1,8 @@
-package com.magyart.random.sample;
+package com.magyart.random.controllers;
 
+import com.magyart.random.model.Enemy;
+import com.magyart.random.model.Player;
+import com.magyart.random.model.Town;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,6 +39,8 @@ public class Controller implements Initializable {
     public Button townRefill;
     @FXML
     public Button townUpgrade;
+    @FXML
+    public Button toDungeon;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -88,6 +93,7 @@ public class Controller implements Initializable {
         townHeal.setVisible(false);
         townRefill.setVisible(false);
         townUpgrade.setVisible(false);
+        toDungeon.setVisible(false);
     }
     public void getEnemy(){
         enemy.randomEnemy();
@@ -124,8 +130,8 @@ public class Controller implements Initializable {
                 player.takeDamage(enemyDamage);
             }else {
                 logFeed.setText("You have defeated [" + enemy.getName() + "] !\nYou have earned [" + player.getXpGain() + "xp] !\nYou have found [5 gold] !");
-                player.leveling(town);
-                player.setGold(player.getGold()+5);
+                player.leveling(enemy, town);
+                player.setGold(player.getGold()+ 20);
                 choice();
             }
             playerStats();
@@ -136,6 +142,7 @@ public class Controller implements Initializable {
     public void choice() {
         attackBtn.setVisible(false);
         healBtn.setVisible(false);
+        toDungeon.setVisible(false);
         keepGoing.setVisible(true);
         toTownBtn.setVisible(true);
         keepGoing.setOnAction(event -> {
@@ -161,7 +168,8 @@ public class Controller implements Initializable {
         attackBtn.setVisible(false);
         healBtn.setVisible(false);
         toTownBtn.setVisible(false);
-        keepGoing.setVisible(true);
+        keepGoing.setVisible(false);
+        toDungeon.setVisible(true);
         townHeal.setVisible(true);
         townRefill.setVisible(true);
         townUpgrade.setVisible(true);
@@ -186,7 +194,8 @@ public class Controller implements Initializable {
             playerStats();
         });
 
-        keepGoing.setOnAction(event -> {
+        toDungeon.setOnAction(event -> {
+            toDungeon.setVisible(false);
             keepGoing();
         });
 

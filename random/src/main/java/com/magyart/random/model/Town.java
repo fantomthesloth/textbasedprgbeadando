@@ -1,11 +1,11 @@
-package com.magyart.random.sample;
+package com.magyart.random.model;
 
 public class Town {
     private int healUp;
     private int refillPotions;
     private int upgradeWeapon;
 
-    Town() {
+    public Town() {
         this.healUp = 10;
         this.refillPotions = 15;
         this.upgradeWeapon = 20;

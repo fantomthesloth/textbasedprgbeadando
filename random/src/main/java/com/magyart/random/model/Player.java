@@ -1,4 +1,4 @@
-package com.magyart.random.sample;
+package com.magyart.random.model;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class Player {
 
     private Random random = new Random();
 
-    Player() {
+    public Player() {
         this.name = name;
         this.maxHealth = 50;
         this.currentHealth = 50;
@@ -145,11 +145,8 @@ public class Player {
         }
     }
 
-    public void leveling(Town town) {
-        if (level > 1)
-            currentXp += xpGain;
-        else
-            currentXp += 50;
+    public void leveling(Enemy enemy, Town town) {
+        currentXp += xpGain;
         if (currentXp >= xpNeeded) {
             xpNeeded = (int) Math.round(xpNeeded * 1.5);
             xpGain *= 1.25;
@@ -162,6 +159,11 @@ public class Player {
             town.setHealUp(town.getHealUp() + 5);
             town.setRefillPotions(town.getRefillPotions() + 7);
             town.setUpgradeWeapon(town.getUpgradeWeapon() + 12);
+            enemy.setMaxHealth((int) Math.round(getMaxHealth() * (1.5)));
+            enemy.setCurrentHealth(enemy.getMaxHealth());
+            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * (1.4 )));
+            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * (1.4 )));
+
         }
     }
 

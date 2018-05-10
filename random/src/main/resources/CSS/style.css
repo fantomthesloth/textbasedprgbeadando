@@ -1,3 +1,12 @@
+.background{
+    -fx-background-color: #353535;
+}
+
+.text-area, .text-area .viewport, .text-area .content {
+    -fx-text-fill: lightgrey;
+    -fx-background-color: #4c4c4c ;
+}
+
 .closeButton{
     -fx-background-color: transparent;
     -fx-text-fill: red;
@@ -22,16 +31,7 @@
     -fx-border-color: #e02828;
 }
 
-@font-face {
-    src: url('JMH Arkham.ttf');
-}
-
-.font{
-    -fx-font-family: "JMH Arkham";
-}
-
 .gameButton{
-    -fx-font-family: "Breathe Fire";
     -fx-background-color: #474747;
     -fx-text-fill: white;
     -fx-border-width: 0px 0px 3px 0px;

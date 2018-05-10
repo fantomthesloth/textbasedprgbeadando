@@ -1,4 +1,4 @@
-package com.magyart.random.sample;
+package com.magyart.random.model;
 
 import java.util.Random;
 
@@ -14,34 +14,34 @@ public class Enemy {
     private Random random = new Random();
 
 
-    Enemy() {
+    public Enemy() {
         this.name = name;
-        this.maxHealth = maxHealth;
-        this.currentHealth = maxHealth;
-        this.maxDamage = maxDamage;
-        this.minDamage = minDamage;
+        this.maxHealth = 50;
+        this.currentHealth = 50;
+        this.maxDamage = 15;
+        this.minDamage = 10;
     }
 
     public void skeleton(Enemy enemy){
         enemy.setName("Skeleton");
-        enemy.setMaxHealth(100);
-        enemy.setCurrentHealth(100);
-        enemy.setMinDamage(3);
-        enemy.setMaxDamage(5);
+        enemy.setMaxHealth(maxHealth);
+        enemy.setCurrentHealth(maxHealth);
+        enemy.setMinDamage(minDamage);
+        enemy.setMaxDamage(maxDamage);
     }
     public void bandit(Enemy enemy){
         enemy.setName("Bandit");
-        enemy.setMaxHealth(35);
-        enemy.setCurrentHealth(40);
-        enemy.setMinDamage(5);
-        enemy.setMaxDamage(10);
+        enemy.setMaxHealth(maxHealth);
+        enemy.setCurrentHealth(maxHealth);
+        enemy.setMinDamage(minDamage);
+        enemy.setMaxDamage(maxDamage);
     }
     public void necromancer(Enemy enemy){
         enemy.setName("Necromancer");
-        enemy.setMaxHealth(100);
-        enemy.setCurrentHealth(100);
-        enemy.setMinDamage(5);
-        enemy.setMaxDamage(10);
+        enemy.setMaxHealth(maxHealth);
+        enemy.setCurrentHealth(maxHealth);
+        enemy.setMinDamage(minDamage);
+        enemy.setMaxDamage(maxDamage);
     }
 
     public String getName() {
