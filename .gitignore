@@ -19,6 +19,7 @@
 *.rar
 
 classpath
+.idea
 .project
 .settings/
 target/
