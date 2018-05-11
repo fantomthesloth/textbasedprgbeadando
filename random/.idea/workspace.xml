@@ -85,11 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="88" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainWindow.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/mainWindow.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -133,15 +143,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/magyart/random/model/Enemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -200,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/FXML/login.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/signup.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/CSS/style.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/FXML/mainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/magyart/random/model/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/magyart/random/controllers/Signup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/magyart/random/DAO/PlayerDAOImpl.java" />
@@ -209,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/magyart/random/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/magyart/random/controllers/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/FXML/mainWindow.fxml" />
       </list>
     </option>
   </component>
@@ -489,12 +490,12 @@
       <workItem from="1526029157963" duration="6379000" />
       <workItem from="1526036930745" duration="3995000" />
       <workItem from="1526041036697" duration="12536000" />
-      <workItem from="1526053616290" duration="12097000" />
+      <workItem from="1526053616290" duration="12332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110705000" />
+    <option name="totallyTimeSpent" value="110940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -632,14 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/mainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/magyart/random/controllers/Signup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -774,6 +767,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="88" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/mainWindow.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
         </state>
       </provider>
     </entry>

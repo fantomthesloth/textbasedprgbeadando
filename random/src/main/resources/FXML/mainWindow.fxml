@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="408.0" prefWidth="489.0" styleClass="background" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magyart.random.controllers.Controller">
+<AnchorPane maxHeight="500.0" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="408.0" prefWidth="489.0" styleClass="background" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magyart.random.controllers.Controller">
    <children>
       <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="489.0" style="-fx-background-color: #191919;">
          <children>
@@ -22,7 +22,7 @@
             </Button>
          </children>
       </HBox>
-      <Label fx:id="welcome1" layoutX="67.0" layoutY="48.0" style="-fx-text-fill: lightgrey;" text="Welcome adventurer!" wrapText="true">
+      <Label fx:id="welcome1" layoutX="64.0" layoutY="44.0" prefHeight="56.0" prefWidth="377.0" style="-fx-text-fill: lightgrey;" text="Welcome to Random!" wrapText="true">
          <font>
             <Font size="39.0" />
          </font>
