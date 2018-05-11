@@ -17,8 +17,10 @@
 *.zip
 *.tar.gz
 *.rar
+*.iml
 
 classpath
+randomDB/
 .project
 .settings/
 target/
