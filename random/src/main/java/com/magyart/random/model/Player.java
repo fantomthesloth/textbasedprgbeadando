@@ -47,24 +47,12 @@ public class Player {
         return currentHealth;
     }
 
-    public void setCurrentHealth(int currentHealth) {
-        this.currentHealth = maxHealth;
-    }
-
     public int getMaxDamage() {
         return maxDamage;
     }
 
-    public void setMaxDamage(int maxDamage) {
-        this.maxDamage = maxDamage;
-    }
-
     public int getMinDamage() {
         return minDamage;
-    }
-
-    public void setMinDamage(int minDamage) {
-        this.minDamage = minDamage;
     }
 
     public int getXpNeeded() {
@@ -83,16 +71,8 @@ public class Player {
         return gold;
     }
 
-    public void setGold(int gold) {
-        this.gold = gold;
-    }
-
     public int getNumberOfPotions() {
         return numberOfPotions;
-    }
-
-    public void setNumberOfPotions(int numberOfPotions) {
-        this.numberOfPotions = numberOfPotions;
     }
 
     public int getXpGain() {

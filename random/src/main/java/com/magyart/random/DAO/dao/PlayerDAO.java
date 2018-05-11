@@ -1,4 +1,4 @@
-package com.magyart.random.DAO.api;
+package com.magyart.random.DAO.dao;
 
 public interface PlayerDAO<PlayerEntity, Long> {
 

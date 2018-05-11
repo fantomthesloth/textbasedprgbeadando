@@ -1,6 +1,6 @@
 package com.magyart.random.DAO;
 
-import com.magyart.random.DAO.api.UserDAO;
+import com.magyart.random.DAO.dao.UserDAO;
 import com.magyart.random.model.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 

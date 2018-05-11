@@ -1,4 +1,4 @@
-package com.magyart.random.service.api;
+package com.magyart.random.service.service;
 
 import com.magyart.random.model.UserEntity;
 

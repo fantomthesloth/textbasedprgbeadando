@@ -1,6 +1,6 @@
 package com.magyart.random.DAO;
 
-import com.magyart.random.DAO.api.PlayerDAO;
+import com.magyart.random.DAO.dao.PlayerDAO;
 
 import javax.persistence.EntityManager;
 

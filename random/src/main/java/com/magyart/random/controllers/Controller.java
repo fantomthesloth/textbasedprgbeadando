@@ -4,7 +4,7 @@ import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
 import com.magyart.random.model.*;
 import com.magyart.random.service.UserServiceImpl;
-import com.magyart.random.service.api.UserService;
+import com.magyart.random.service.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -50,6 +51,7 @@ public class Controller implements Initializable {
     public Label welcome1;
     @FXML
     public Label welcome2;
+    public ImageView diedGif;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -100,51 +102,12 @@ public class Controller implements Initializable {
         townUpgrade.setVisible(false);
         toDungeon.setVisible(false);
         restartBtn.setVisible(false);
+        diedGif.setVisible(false);
+
         setUpEnemy(enemy);
         town.setUpTown();
         playerStats();
         start();
-    }
-
-    public void setUpEnemy(Enemy enemy){
-        userEntity = userService.registered(UserServiceImpl.getUsername());
-
-        if(userEntity.getPlayerEntity().getLevel() > 1){
-            enemy.setMaxHealth((int) Math.round(enemy.getMaxHealth() * Math.pow(1.5, (userEntity.getPlayerEntity().getLevel()-1))));
-            enemy.setCurrentHealth(enemy.getMaxHealth());
-            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * Math.pow(1.4, (userEntity.getPlayerEntity().getLevel()-1))));
-            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * Math.pow(1.4, (userEntity.getPlayerEntity().getLevel()-1))));
-        }
-    }
-
-    public void playerStats(){
-        userEntity = userService.registered(UserServiceImpl.getUsername());
-
-        playerStatTA.setText("Name: " + userEntity.getPlayerEntity().getName() + "  lvl: " + userEntity.getPlayerEntity().getLevel() +
-                "\nHealth: " + userEntity.getPlayerEntity().getCurrentHealth() + " / " + userEntity.getPlayerEntity().getMaxHealth() +
-                "\nDamage: " + userEntity.getPlayerEntity().getMinDamage()+" ~ "+userEntity.getPlayerEntity().getMaxDamage() +
-                "\nXP: " + userEntity.getPlayerEntity().getCurrentXp()+" / "+ userEntity.getPlayerEntity().getXpNeeded() +
-                "\nPotions: " + userEntity.getPlayerEntity().getNumberOfPotions() +
-                "\nGold: " + userEntity.getPlayerEntity().getGold());
-    }
-
-    public void enemyStats(){
-        logFeed.setText("You have encountered with [" + enemy.getName() + "] !" + "\nHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
-                "\nDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
-    }
-
-    public void townStat(){
-        logFeed.setText("You are in the town now!\nWhat will you do now?\n\n" +
-                "Heal - " + town.getHealUp() + " gold\n" +
-                "Refill potions - " + town.getRefillPotions() + " gold\n" +
-                "Upgrade weapon - " + town.getUpgradeWeapon() + " gold");
-    }
-
-
-    public void getEnemy(){
-        enemy.randomEnemy();
-        setUpEnemy(enemy);
-        enemyStats();
     }
 
     public void start(){
@@ -160,6 +123,7 @@ public class Controller implements Initializable {
                 welcome2.setVisible(false);
                 logFeed.setVisible(true);
                 playerStatTA.setVisible(true);
+
                 userEntity.getPlayerEntity().setName(namer.getText());
                 player.setName(namer.getText());
                 inTown();
@@ -174,13 +138,9 @@ public class Controller implements Initializable {
             attackBtn.setVisible(false);
             logFeed.setVisible(true);
             playerStatTA.setVisible(true);
+
             inTown();
         }
-    }
-
-    public void heal(ActionEvent actionEvent) {
-        fight.heal();
-        playerStats();
     }
 
     public void attack(ActionEvent actionEvent) throws InterruptedException {
@@ -198,16 +158,44 @@ public class Controller implements Initializable {
         if (userEntity.getPlayerEntity().getCurrentHealth() == 0){
             attackBtn.setVisible(false);
             healBtn.setVisible(false);
+            diedGif.setVisible(true);
             restartBtn.setVisible(true);
+
             logFeed.setText("You have died, you can restart the game from level 1.");
+
             restartBtn.setOnAction(event -> {
+                diedGif.setVisible(false);
                 restartBtn.setVisible(false);
+
                 PlayerEntity playerEntity = new PlayerEntity(player);
                 userEntity.setPlayerEntity(playerEntity);
                 playerStats();
                 inTown();
             });
         }
+    }
+
+    public void heal(ActionEvent actionEvent) {
+        fight.heal();
+        playerStats();
+    }
+
+    public void setUpEnemy(Enemy enemy){
+        userEntity = userService.registered(UserServiceImpl.getUsername());
+
+        if(userEntity.getPlayerEntity().getLevel() > 1){
+            enemy.setMaxHealth((int) Math.round(enemy.getMaxHealth() * Math.pow(1.5, (userEntity.getPlayerEntity().getLevel()-1))));
+            enemy.setCurrentHealth(enemy.getMaxHealth());
+            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * Math.pow(1.4, (userEntity.getPlayerEntity().getLevel()-1))));
+            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * Math.pow(1.4, (userEntity.getPlayerEntity().getLevel()-1))));
+        }
+    }
+
+
+    public void getEnemy(){
+        enemy.randomEnemy();
+        setUpEnemy(enemy);
+        enemyStats();
     }
 
     public void choice() {
@@ -223,18 +211,19 @@ public class Controller implements Initializable {
             inTown();
         });
     }
+
     public void keepGoing(){
-        attackBtn.setVisible(true);
-        healBtn.setVisible(true);
         keepGoing.setVisible(false);
         toTownBtn.setVisible(false);
         townHeal.setVisible(false);
         townRefill.setVisible(false);
         townUpgrade.setVisible(false);
+        attackBtn.setVisible(true);
+        healBtn.setVisible(true);
 
         getEnemy();
-
     }
+
     public void inTown(){
         attackBtn.setVisible(false);
         healBtn.setVisible(false);
@@ -268,5 +257,28 @@ public class Controller implements Initializable {
 
         townStat();
 
+    }
+
+    public void playerStats(){
+        userEntity = userService.registered(UserServiceImpl.getUsername());
+
+        playerStatTA.setText("Name: " + userEntity.getPlayerEntity().getName() + "  lvl: " + userEntity.getPlayerEntity().getLevel() +
+                "\nHealth: " + userEntity.getPlayerEntity().getCurrentHealth() + " / " + userEntity.getPlayerEntity().getMaxHealth() +
+                "\nDamage: " + userEntity.getPlayerEntity().getMinDamage()+" ~ "+userEntity.getPlayerEntity().getMaxDamage() +
+                "\nXP: " + userEntity.getPlayerEntity().getCurrentXp()+" / "+ userEntity.getPlayerEntity().getXpNeeded() +
+                "\nPotions: " + userEntity.getPlayerEntity().getNumberOfPotions() +
+                "\nGold: " + userEntity.getPlayerEntity().getGold());
+    }
+
+    public void enemyStats(){
+        logFeed.setText("You have encountered with [" + enemy.getName() + "] !" + "\nHealth: " + enemy.getCurrentHealth()+"/"+enemy.getMaxHealth() +
+                "\nDamage: " + enemy.getMinDamage()+" ~ "+enemy.getMaxDamage());
+    }
+
+    public void townStat(){
+        logFeed.setText("You are in the town now!\nWhat will you do now?\n\n" +
+                "Heal - " + town.getHealUp() + " gold\n" +
+                "Refill potions - " + town.getRefillPotions() + " gold\n" +
+                "Upgrade weapon - " + town.getUpgradeWeapon() + " gold");
     }
 }

@@ -3,7 +3,7 @@ package com.magyart.random.model;
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
 import com.magyart.random.service.UserServiceImpl;
-import com.magyart.random.service.api.UserService;
+import com.magyart.random.service.service.UserService;
 
 public class Town {
     private int healUp;

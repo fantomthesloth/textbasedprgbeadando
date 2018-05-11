@@ -2,13 +2,12 @@ package com.magyart.random.model;
 
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
-import com.magyart.random.model.*;
 import com.magyart.random.service.UserServiceImpl;
-import com.magyart.random.service.api.UserService;
+import com.magyart.random.service.service.UserService;
 
 public class Fight {
-    int playerDamage;
-    int enemyDamage;
+    private int playerDamage;
+    private int enemyDamage;
 
     private UserEntity userEntity;
     private UserService userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
@@ -47,6 +46,7 @@ public class Fight {
         userEntity = userService.registered(UserServiceImpl.getUsername());
 
         if (dmg >= userEntity.getPlayerEntity().getCurrentHealth()) {
+
             userEntity.getPlayerEntity().setCurrentHealth(0);
         } else {
             userEntity.getPlayerEntity().setCurrentHealth(userEntity.getPlayerEntity().getCurrentHealth() - dmg);
@@ -59,6 +59,7 @@ public class Fight {
         userEntity.getPlayerEntity().setCurrentXp(userEntity.getPlayerEntity().getCurrentXp() + userEntity.getPlayerEntity().getXpGain());
 
         if (userEntity.getPlayerEntity().getCurrentXp() >= userEntity.getPlayerEntity().getXpNeeded()) {
+
             userEntity.getPlayerEntity().setLevel(userEntity.getPlayerEntity().getLevel() + 1);
             userEntity.getPlayerEntity().setXpNeeded((int) Math.round(userEntity.getPlayerEntity().getXpNeeded() * 1.5));
             userEntity.getPlayerEntity().setXpGain((int) Math.round(userEntity.getPlayerEntity().getXpGain() * 1.25));
@@ -88,6 +89,7 @@ public class Fight {
             if ((userEntity.getPlayerEntity().getMaxHealth() - userEntity.getPlayerEntity().getCurrentHealth()) <= (userEntity.getPlayerEntity().getMaxHealth() * 0.4)) {
                 userEntity.getPlayerEntity().setCurrentHealth(userEntity.getPlayerEntity().getMaxHealth());
                 userEntity.getPlayerEntity().setNumberOfPotions(userEntity.getPlayerEntity().getNumberOfPotions() - 1);
+
             } else {
                 userEntity.getPlayerEntity().setCurrentHealth((int) (userEntity.getPlayerEntity().getCurrentHealth() + Math.round(userEntity.getPlayerEntity().getMaxHealth() * 0.4)));
                 userEntity.getPlayerEntity().setNumberOfPotions(userEntity.getPlayerEntity().getNumberOfPotions() - 1);

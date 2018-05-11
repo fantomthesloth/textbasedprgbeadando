@@ -3,7 +3,7 @@ package com.magyart.random.controllers;
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
 import com.magyart.random.service.UserServiceImpl;
-import com.magyart.random.service.api.UserService;
+import com.magyart.random.service.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

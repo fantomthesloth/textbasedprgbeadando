@@ -2,7 +2,7 @@ package com.magyart.random.service;
 
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.model.UserEntity;
-import com.magyart.random.service.api.UserService;
+import com.magyart.random.service.service.UserService;
 
 public class UserServiceImpl implements UserService {
 

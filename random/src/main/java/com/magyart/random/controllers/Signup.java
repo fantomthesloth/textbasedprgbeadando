@@ -6,7 +6,7 @@ import com.magyart.random.model.Player;
 import com.magyart.random.model.PlayerEntity;
 import com.magyart.random.model.UserEntity;
 import com.magyart.random.service.UserServiceImpl;
-import com.magyart.random.service.api.UserService;
+import com.magyart.random.service.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -31,7 +31,7 @@ public class Signup {
 
     private UserService userService;
 
-    PlayerEntity playerEntity = new PlayerEntity();
+    private PlayerEntity playerEntity = new PlayerEntity();
 
 
     public void pressed(MouseEvent mouseEvent) {
