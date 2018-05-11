@@ -1,5 +1,7 @@
 .background{
+    -fx-background-image: url("/IMAGE/triangle_pattern.png");
     -fx-background-color: #353535;
+
 }
 
 .text-area, .text-area .viewport, .text-area .content {
@@ -25,21 +27,6 @@
 }
 
 .normalButton:hover{
-    -fx-background-color: #5e5e5e;
-    -fx-text-fill: white;
-    -fx-border-width: 0px 0px 3px 0px;
-    -fx-border-color: #e02828;
-}
-
-.gameButton{
-    -fx-background-color: #474747;
-    -fx-text-fill: white;
-    -fx-border-width: 0px 0px 3px 0px;
-    -fx-border-color: #ad0f0f;
-    -fx-font-size: 25px;
-}
-
-.gameButton:hover{
     -fx-background-color: #5e5e5e;
     -fx-text-fill: white;
     -fx-border-width: 0px 0px 3px 0px;
