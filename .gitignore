@@ -20,7 +20,7 @@
 
 classpath
 randomDB/
-.idea
+.idea/
 .project
 .settings/
 target/
