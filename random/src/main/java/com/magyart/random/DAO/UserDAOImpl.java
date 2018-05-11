@@ -4,9 +4,7 @@ import com.magyart.random.DAO.api.UserDAO;
 import com.magyart.random.model.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.Query;
+import javax.persistence.*;
 
 @Slf4j
 public class UserDAOImpl implements UserDAO {
@@ -42,12 +40,45 @@ public class UserDAOImpl implements UserDAO {
         entityManager.getTransaction().commit();
     }
 
-    /*public UserEntity loggedIn(String username, String password) throws Exception{
+    public UserEntity registered(String username){
+        if (username == null){
+            throw new IllegalArgumentException("No username found!");
+        }
+
+        try{
+            Query query = entityManager.createQuery("select user from UserEntity user where lower(user.username) = lower(:username)");
+
+            query.setParameter("username", username);
+
+            return (UserEntity) query.getSingleResult();
+        }catch (NoResultException exception){
+            log.error("No result found");
+            return null;
+
+        }catch (PersistenceException exception){
+            log.error("Query error");
+            return null;
+        }
+    }
+
+    public UserEntity loggedIn(String username, String password) throws Exception{
         if(username == null || password == null){
             throw new IllegalArgumentException("Username or password not given!");
         }
         try{
-            Query query = entityManager.createQuery("select u from UserEntity ")
+            Query query = entityManager.createQuery("select user from UserEntity user where user.username = :username and user.password = :password");
+
+            query.setParameter("username", username);
+            query.setParameter("password", password);
+
+            return (UserEntity) query.getSingleResult();
+        }catch (NoResultException exception){
+            log.error("No result found");
+            return null;
+            
+        }catch (PersistenceException exception){
+            log.error("Query error.");
+            return null;
         }
-    }*/
+    }
 }

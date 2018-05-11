@@ -1,9 +1,13 @@
 package com.magyart.random.controllers;
 
+import com.magyart.random.DAO.UserDAOImpl;
+import com.magyart.random.DB.Manager;
 import com.magyart.random.model.Enemy;
 import com.magyart.random.model.Fight;
 import com.magyart.random.model.Player;
 import com.magyart.random.model.Town;
+import com.magyart.random.service.UserServiceImpl;
+import com.magyart.random.service.api.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -47,6 +51,8 @@ public class Controller implements Initializable {
     private Enemy enemy = new Enemy();
     private Town town = new Town();
     private Fight fight = new Fight();
+
+    private UserService userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
 
     double x, y = 0;
 

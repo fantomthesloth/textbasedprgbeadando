@@ -45,3 +45,10 @@
     -fx-border-width: 0px 0px 3px 0px;
     -fx-border-color: #e02828;
 }
+
+.textField{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: #ad0f0f;
+}

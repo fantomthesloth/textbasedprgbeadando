@@ -1,6 +1,11 @@
 package com.magyart.random.controllers;
 
+import com.magyart.random.DAO.UserDAOImpl;
+import com.magyart.random.DB.Manager;
+import com.magyart.random.service.UserServiceImpl;
+import com.magyart.random.service.api.UserService;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -17,14 +22,20 @@ import java.io.IOException;
 
 
 public class Login {
-    public Button toSignup;
 
+    @FXML
+    public Button toSignup;
+    @FXML
     public TextField txtLoginUsr;
+    @FXML
     public PasswordField txtLoginPswd;
+    @FXML
     public Label msgBoxLogin;
 
-    double x, y = 0;
-    String style = "-fx-background-color:  #282828; -fx-text-fill: red";
+    private double x, y = 0;
+    private String style = "-fx-background-color:  #282828; -fx-text-fill: red";
+
+    private UserService userService;
 
 
     public void pressed(MouseEvent mouseEvent) {
@@ -46,6 +57,9 @@ public class Login {
         stage.close();
     }
 
+    public void initialize(){
+        userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
+    }
 
     public void switchSignup(ActionEvent actionEvent) throws IOException {
         Stage stage;
@@ -60,29 +74,24 @@ public class Login {
         }
     }
 
-    private void sleep (int time) throws InterruptedException {
-        Thread.sleep(time);
-    }
-
-    public void logIn(ActionEvent actionEvent) throws IOException, InterruptedException {
+    public void logIn(ActionEvent actionEvent) throws Exception {
         Parent root;
         Stage stage = new Stage();
-        if(!txtLoginUsr.getText().equals("asd") || !txtLoginPswd.getText().equals("asd")){
+
+        if(txtLoginUsr.getText().isEmpty() || txtLoginPswd.getText().isEmpty()){
             msgBoxLogin.setStyle(style);
-            msgBoxLogin.setText("Incorrect username and/or password!");
-            if(txtLoginUsr.getText().isEmpty() || txtLoginPswd.getText().isEmpty()){
-                msgBoxLogin.setText("You forgot to write your username and/or password!");
-            }
-        }
-        if(txtLoginUsr.getText().equals("asd") && txtLoginPswd.getText().equals("asd")) {
-            msgBoxLogin.setStyle(style);
-            msgBoxLogin.setText("You have logged in, please wait..");
+            msgBoxLogin.setText("You forgot to write your username and/or password!");
+        }else if(userService.loggedIn(txtLoginUsr.getText(), txtLoginPswd.getText()) != null){
+            UserServiceImpl.setUsername(txtLoginUsr.getText());
+
             root = FXMLLoader.load(getClass().getResource("/FXML/mainWindow.fxml"));
             stage.setScene(new Scene(root));
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+        }else{
+            msgBoxLogin.setStyle(style);
+            msgBoxLogin.setText("Incorrect username and/or password!");
         }
-
     }
 }

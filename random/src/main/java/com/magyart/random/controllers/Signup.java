@@ -1,5 +1,10 @@
 package com.magyart.random.controllers;
 
+import com.magyart.random.DAO.UserDAOImpl;
+import com.magyart.random.DB.Manager;
+import com.magyart.random.model.UserEntity;
+import com.magyart.random.service.UserServiceImpl;
+import com.magyart.random.service.api.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,8 +24,10 @@ public class Signup {
 
     public Label msgBoxSignup;
 
-    double x, y = 0;
-    String style = "-fx-background-color:  #282828; -fx-text-fill: red";
+    private double x, y = 0;
+    private String style = "-fx-background-color:  #282828; -fx-text-fill: red";
+
+    private UserService userService;
 
 
     public void pressed(MouseEvent mouseEvent) {
@@ -42,6 +49,10 @@ public class Signup {
         stage.close();
     }
 
+    public void initialize(){
+        userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
+    }
+
 
     public void switchLogin(ActionEvent actionEvent) throws IOException {
         Stage stage;
@@ -57,16 +68,27 @@ public class Signup {
     }
 
     public void signup(ActionEvent actionEvent) {
+        UserEntity userEntity = new UserEntity();
+
         if(txtSignupUsr.getText().isEmpty() || txtSignupPswd.getText().isEmpty() || txtSignupPswd2.getText().isEmpty()) {
             msgBoxSignup.setStyle(style);
             msgBoxSignup.setText("You must write something in each box!");
         }
-        if (!txtSignupUsr.getText().isEmpty() && !txtSignupPswd.getText().equals(txtSignupPswd2.getText())) {
+        else if (!txtSignupUsr.getText().isEmpty() && !txtSignupPswd.getText().equals(txtSignupPswd2.getText())) {
             msgBoxSignup.setStyle(style);
             msgBoxSignup.setText("Passwords do not match!");
-        }else if(!txtSignupUsr.getText().isEmpty() && txtSignupPswd.getText().equals(txtSignupPswd2.getText()) && !txtSignupPswd.getText().isEmpty() && !txtSignupPswd2.getText().isEmpty()){
-            msgBoxSignup.setStyle(style);
-            msgBoxSignup.setText("Signup successful, you can log in now!");
+        }else{
+            userEntity.setUsername(txtSignupUsr.getText());
+            userEntity.setPassword(txtSignupPswd.getText());
+
+            if(userService.registered(txtSignupUsr.getText()) == null){
+                userService.registerUser(userEntity);
+                msgBoxSignup.setStyle(style);
+                msgBoxSignup.setText("Signup successful, you can log in now!");
+            }else{
+                msgBoxSignup.setStyle(style);
+                msgBoxSignup.setText("Username already taken!");
+            }
         }
     }
 }
