@@ -2,6 +2,8 @@ package com.magyart.random.controllers;
 
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
+import com.magyart.random.model.Player;
+import com.magyart.random.model.PlayerEntity;
 import com.magyart.random.model.UserEntity;
 import com.magyart.random.service.UserServiceImpl;
 import com.magyart.random.service.api.UserService;
@@ -28,6 +30,8 @@ public class Signup {
     private String style = "-fx-background-color:  #282828; -fx-text-fill: red";
 
     private UserService userService;
+
+    PlayerEntity playerEntity = new PlayerEntity();
 
 
     public void pressed(MouseEvent mouseEvent) {
@@ -69,6 +73,7 @@ public class Signup {
 
     public void signup(ActionEvent actionEvent) {
         UserEntity userEntity = new UserEntity();
+        playerEntity = new PlayerEntity(new Player());
 
         if(txtSignupUsr.getText().isEmpty() || txtSignupPswd.getText().isEmpty() || txtSignupPswd2.getText().isEmpty()) {
             msgBoxSignup.setStyle(style);
@@ -80,6 +85,7 @@ public class Signup {
         }else{
             userEntity.setUsername(txtSignupUsr.getText());
             userEntity.setPassword(txtSignupPswd.getText());
+            userEntity.setPlayerEntity(playerEntity);
 
             if(userService.registered(txtSignupUsr.getText()) == null){
                 userService.registerUser(userEntity);

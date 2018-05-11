@@ -6,7 +6,12 @@
 
     <groupId>hu.unideb.inf.pk</groupId>
     <artifactId>random</artifactId>
-    <version>1.0</version>
+    <version>0.6</version>
+    <organization>
+        <name>University of Debrecen</name>
+        <url>unideb.hu</url>
+    </organization>
+    <inceptionYear>2018</inceptionYear>
 
     <properties>
         <!-- Resources állományok kódlap beállítása ("[WARNING] Using platform encoding ??? actually) to copy filtered resources, i.e. build is platform dependent!") -->

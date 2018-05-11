@@ -52,6 +52,7 @@ public class Login {
     }
 
     public void closeApp(ActionEvent actionEvent) {
+        Manager.getInstance().close();
         final Node source = (Node) actionEvent.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();

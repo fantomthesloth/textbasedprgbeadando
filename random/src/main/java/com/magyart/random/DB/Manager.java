@@ -54,6 +54,7 @@ public class Manager implements AutoCloseable {
         if (entityManagerFactory != null){
             entityManager.close();
             entityManagerFactory.close();
+            log.info("Databe closed!");
         }
     }
 //

@@ -111,50 +111,7 @@ public class Player {
         return random.nextInt(maxDamage - minDamage) + minDamage;
     }
 
-    public void takeDamage(int dmg) {
-        if (dmg >= currentHealth) {
-            currentHealth = 0;
-        } else {
-            currentHealth = currentHealth - dmg;
-        }
-    }
 
-    public void heal() {
-        if (currentHealth > 0 && numberOfPotions > 0) {
-            if (currentHealth == maxHealth) {
-                currentHealth = maxHealth;
-            }
-            if ((maxHealth - currentHealth) <= (maxHealth * 0.4)) {
-                currentHealth = maxHealth;
-                numberOfPotions--;
-            } else {
-                currentHealth = (int) (currentHealth + Math.round(maxHealth * 0.4));
-                numberOfPotions--;
-            }
-        }
-    }
-
-    public void leveling(Enemy enemy, Town town) {
-        currentXp += xpGain;
-        if (currentXp >= xpNeeded) {
-            level++;
-            xpNeeded = (int) Math.round(xpNeeded * 1.5);
-            xpGain *= 1.25;
-            maxHealth *= 1.3;
-            currentHealth = maxHealth;
-            minDamage *= 1.2;
-            maxDamage *= 1.2;
-            numberOfPotions = 5;
-            goldGain = (int) Math.round(goldGain*1.6);
-
-            town.setUpTown(this);
-
-            enemy.setMaxHealth((int) Math.round(enemy.getMaxHealth() * Math.pow(1.2, (getLevel()-1))));
-            enemy.setCurrentHealth(enemy.getMaxHealth());
-            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * Math.pow(1.5, (getLevel()-1))));
-            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * Math.pow(1.5, (getLevel()-1))));
-        }
-    }
 
 }
 

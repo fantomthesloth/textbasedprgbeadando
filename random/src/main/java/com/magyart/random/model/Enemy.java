@@ -13,36 +13,34 @@ public class Enemy {
 
     private Random random = new Random();
 
-
     public Enemy() {
         this.name = name;
         this.maxHealth = maxHealth;
-        this.currentHealth = 30;
-        this.maxDamage = 10;
-        this.minDamage = 5;
+        this.currentHealth = maxHealth;
+        this.maxDamage = maxDamage;
+        this.minDamage = minDamage;
     }
-
 
     public void skeleton(Enemy enemy){
         enemy.setName("Skeleton");
-        enemy.setMaxHealth(37);
+        enemy.setMaxHealth(35);
         setCurrentHealth(getMaxHealth());
-        setMinDamage(getMinDamage());
-        setMaxDamage(getMaxDamage());
+        setMinDamage(15);
+        setMaxDamage(20);
     }
     public void bandit(Enemy enemy){
         enemy.setName("Bandit");
         enemy.setMaxHealth(40);
         setCurrentHealth(getMaxHealth());
-        setMinDamage(getMinDamage());
-        setMaxDamage(getMaxDamage());
+        setMinDamage(20);
+        setMaxDamage(25);
     }
     public void necromancer(Enemy enemy){
         enemy.setName("Necromancer");
         enemy.setMaxHealth(30);
         setCurrentHealth(getMaxHealth());
-        setMinDamage(getMinDamage());
-        setMaxDamage(getMaxDamage());
+        setMinDamage(15);
+        setMaxDamage(30);
     }
 
     public String getName() {
@@ -108,15 +106,6 @@ public class Enemy {
         return random.nextInt(maxDamage-minDamage) + minDamage;
     }
 
-    public void setUpEnemy(Player player, Enemy enemy){
-
-        if(player.getLevel() > 1){
-            enemy.setMaxHealth((int) Math.round(enemy.getMaxHealth() * Math.pow(1.5, (player.getLevel()-1))));
-            enemy.setCurrentHealth(enemy.getMaxHealth());
-            enemy.setMinDamage((int) Math.round(enemy.getMinDamage() * Math.pow(1.4, (player.getLevel()-1))));
-            enemy.setMaxDamage((int) Math.round(enemy.getMaxDamage() * Math.pow(1.4, (player.getLevel()-1))));
-        }
-    }
 
     public void takeDamage(int dmg){
         if(dmg >= currentHealth){

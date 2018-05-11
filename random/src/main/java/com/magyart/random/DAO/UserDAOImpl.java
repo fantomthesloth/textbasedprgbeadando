@@ -52,11 +52,11 @@ public class UserDAOImpl implements UserDAO {
 
             return (UserEntity) query.getSingleResult();
         }catch (NoResultException exception){
-            log.error("No result found");
+            log.error("No result found!");
             return null;
 
         }catch (PersistenceException exception){
-            log.error("Query error");
+            log.error("Query error!");
             return null;
         }
     }
@@ -73,11 +73,11 @@ public class UserDAOImpl implements UserDAO {
 
             return (UserEntity) query.getSingleResult();
         }catch (NoResultException exception){
-            log.error("No result found");
+            log.error("No result found!");
             return null;
             
         }catch (PersistenceException exception){
-            log.error("Query error.");
+            log.error("Query error!");
             return null;
         }
     }
