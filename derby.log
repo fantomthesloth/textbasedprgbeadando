@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri May 11 21:50:10 CEST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0163-50c0-e94e-000004df88e8 
+on database directory C:\Users\mtoom\Documents\textbasedprgbeadando\randomDB with class loader java.net.URLClassLoader@13c17628 
+Loaded from file:/C:/Users/mtoom/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_161-b12
+user.dir=C:\Users\mtoom\Documents\textbasedprgbeadando
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
