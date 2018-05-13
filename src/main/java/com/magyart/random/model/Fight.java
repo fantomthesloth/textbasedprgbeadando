@@ -4,34 +4,35 @@ import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
 import com.magyart.random.service.UserServiceImpl;
 import com.magyart.random.service.service.UserService;
+import lombok.Data;
 
+import java.util.Random;
+
+/**
+ * Class representing the fight option in the game.
+ */
+@Data
 public class Fight {
+    private UserService userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
+    private UserEntity userEntity  = userService.registered(UserServiceImpl.getUsername());
+
     private int playerDamage;
     private int enemyDamage;
+    private Random random = new Random();
 
-    private UserEntity userEntity;
-    private UserService userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
+    /**
+     * Method for fighting.
+     * Changes the player's and enemy's health according to their damage value.
+     * Calculates player's, enemy's and town's progress after each enemy defeated.
+     *
+     * @param enemy - Instance of {@link Enemy}.
+     * @param town - Instance of {@link Town}.
+     */
+    public void fight(Enemy enemy, Town town) {
+        playerDamage = playerAttack();
+        enemyDamage = enemy.attack();
 
-    public int getPlayerDamage() {
-        return playerDamage;
-    }
-
-    public void setPlayerDamage(int playerDamage) {
-        this.playerDamage = playerDamage;
-    }
-
-    public int getEnemyDamage() {
-        return enemyDamage;
-    }
-
-    public void setEnemyDamage(int enemyDamage) {
-        this.enemyDamage = enemyDamage;
-    }
-
-    public void fight(Player player, Enemy enemy, Town town){
-        setPlayerDamage(player.attack());
-        setEnemyDamage(enemy.attack());
-        if(player.isAlive() && enemy.isAlive()) {
+        if (playerIsAlive() && enemy.isAlive()) {
             enemy.takeDamage(playerDamage);
             if (enemy.isAlive()) {
                 playerTakeDamage(enemyDamage);
@@ -42,9 +43,21 @@ public class Fight {
         }
     }
 
-    private void playerTakeDamage(int dmg) {
-        userEntity = userService.registered(UserServiceImpl.getUsername());
+    /**
+     * Method to calculate the player's attack damage.
+     *
+     * @return - A random int value between the player's minimum and maximum damage.
+     */
+    private int playerAttack() {
+        return random.nextInt(userEntity.getPlayerEntity().getMaxDamage() - userEntity.getPlayerEntity().getMinDamage()) + userEntity.getPlayerEntity().getMinDamage();
+    }
 
+    /**
+     * Method to calculate the player's health after it's taken damage.
+     *
+     * @param dmg - The damage value that the player received.
+     */
+    private void playerTakeDamage(int dmg) {
         if (dmg >= userEntity.getPlayerEntity().getCurrentHealth()) {
 
             userEntity.getPlayerEntity().setCurrentHealth(0);
@@ -53,9 +66,13 @@ public class Fight {
         }
     }
 
+    /**
+     * Method to calculate the player's, enemy's and town's stats after the player has leveled up.
+     *
+     * @param enemy - Instance of {@link Enemy}.
+     * @param town - Instance of {@link Town}.
+     */
     private void leveling(Enemy enemy, Town town) {
-        userEntity = userService.registered(UserServiceImpl.getUsername());
-
         userEntity.getPlayerEntity().setCurrentXp(userEntity.getPlayerEntity().getCurrentXp() + userEntity.getPlayerEntity().getXpGain());
 
         if (userEntity.getPlayerEntity().getCurrentXp() >= userEntity.getPlayerEntity().getXpNeeded()) {
@@ -79,9 +96,19 @@ public class Fight {
         }
     }
 
-    public void heal() {
-        userEntity = userService.registered(UserServiceImpl.getUsername());
+    /**
+     * Checks if the player is alive.
+     *
+     * @return - True if the player has at least 1 health.
+     */
+    public boolean playerIsAlive() {
+        return userEntity.getPlayerEntity().getCurrentHealth() > 0;
+    }
 
+    /**
+     * Heals the player. Changes the player's health according to their current health and number of potions.
+     */
+    public void heal() {
         if (userEntity.getPlayerEntity().getCurrentHealth() > 0 && userEntity.getPlayerEntity().getNumberOfPotions() > 0) {
             if (userEntity.getPlayerEntity().getCurrentHealth() == userEntity.getPlayerEntity().getMaxHealth()) {
                 userEntity.getPlayerEntity().setCurrentHealth(userEntity.getPlayerEntity().getMaxHealth());

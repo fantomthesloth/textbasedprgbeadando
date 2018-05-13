@@ -6,16 +6,32 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 
+/**
+ * Class implementing {@link UserDAO} interface.
+ */
 @Slf4j
 public class UserDAOImpl implements UserDAO {
 
+    /**
+     * Instance of {@link EntityManager}.
+     */
     private EntityManager entityManager;
 
+    /**
+     * Constructor of the DAO.
+     *
+     * @param entityManager - Instance of {@link EntityManager}.
+     */
     public UserDAOImpl(EntityManager entityManager){
         this.entityManager = entityManager;
     }
 
 
+    /**
+     * Method to persist the user.
+     *
+     * @param o - An entity.
+     */
     @Override
     public void persist(Object o) {
         if(o == null){
@@ -28,6 +44,11 @@ public class UserDAOImpl implements UserDAO {
 
     }
 
+    /**
+     * Method to update the data of the user.
+     *
+     * @param o - An entity.
+     */
     @Override
     public void update(Object o) {
 
@@ -40,6 +61,12 @@ public class UserDAOImpl implements UserDAO {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * Returns an entity that's username equals to the username parameter.
+     *
+     * @param username - A username.
+     * @return - Entity that's username equals to the username parameter.
+     */
     public UserEntity registered(String username){
         if (username == null){
             throw new IllegalArgumentException("No username found!");
@@ -61,7 +88,14 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
-    public UserEntity loggedIn(String username, String password) throws Exception{
+    /**
+     * Returns an entity that's username and password equals to the username and password parameters.
+     *
+     * @param username - A username.
+     * @param password - A password.
+     * @return - Entity that's username and password equals to the username and password parameters.
+     */
+    public UserEntity loggedIn(String username, String password){
         if(username == null || password == null){
             throw new IllegalArgumentException("Username or password not given!");
         }

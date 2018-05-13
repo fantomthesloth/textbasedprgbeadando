@@ -4,41 +4,32 @@ import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
 import com.magyart.random.service.UserServiceImpl;
 import com.magyart.random.service.service.UserService;
+import lombok.Data;
 
+/**
+ * Class representing the Town and it's functions in the game.
+ */
+@Data
 public class Town {
+    private UserService userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
+    private UserEntity userEntity = userService.registered(UserServiceImpl.getUsername());
+
     private int healUp;
     private int refillPotions;
     private int upgradeWeapon;
 
-    private UserEntity userEntity;
-    private UserService userService = new UserServiceImpl(new UserDAOImpl(Manager.getInstance()));
-
+    /**
+     * Constructor of the Town class
+     */
     public Town() {
         this.healUp = 10;
         this.refillPotions = 15;
         this.upgradeWeapon = 20;
     }
 
-    public int getHealUp() {
-        return healUp;
-    }
-
-    public void setHealUp(int healUp) {
-        this.healUp = healUp;
-    }
-
-    public int getRefillPotions() {
-        return refillPotions;
-    }
-
-    public void setRefillPotions(int refillPotions) {
-        this.refillPotions = refillPotions;
-    }
-
-    public int getUpgradeWeapon() {
-        return upgradeWeapon;
-    }
-
+    /**
+     * Method to heal up the player to max health.
+     */
     public void healUp(){
         userEntity = userService.registered(UserServiceImpl.getUsername());
 
@@ -48,6 +39,9 @@ public class Town {
         }
     }
 
+    /**
+     * Method to refill the player's potions.
+     */
     public void refillPotions(){
         userEntity = userService.registered(UserServiceImpl.getUsername());
 
@@ -57,8 +51,11 @@ public class Town {
         }
     }
 
+    /**
+     * Method to upgrade the player's weapon.
+     */
     public void upgradeWeapon(){
-        userEntity = userService.registered(UserServiceImpl.getUsername());
+
 
         if(userEntity.getPlayerEntity().getGold() >= upgradeWeapon) {
             userEntity.getPlayerEntity().setMinDamage((int) Math.round(userEntity.getPlayerEntity().getMinDamage() * 1.3));
@@ -68,6 +65,9 @@ public class Town {
         }
     }
 
+    /**
+     * Method to set up the town according to the player's level.
+     */
     public void setUpTown(){
         userEntity = userService.registered(UserServiceImpl.getUsername());
 

@@ -1,7 +1,11 @@
 package com.magyart.random.model;
 
-import java.util.Random;
+import lombok.Data;
 
+/**
+ * Class representing the player's default stats.
+ */
+@Data
 public class Player {
     private String name;
     private int maxHealth;
@@ -16,8 +20,10 @@ public class Player {
     private int xpGain = 25;
     private int goldGain = 5;
 
-    private Random random = new Random();
-
+    /**
+     * Constructor of the Player class.
+     *
+     */
     public Player() {
         this.name = name;
         this.maxHealth = 50;
@@ -30,68 +36,5 @@ public class Player {
         this.level = 1;
         this.gold = 30;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    public int getCurrentHealth() {
-        return currentHealth;
-    }
-
-    public int getMaxDamage() {
-        return maxDamage;
-    }
-
-    public int getMinDamage() {
-        return minDamage;
-    }
-
-    public int getXpNeeded() {
-        return xpNeeded;
-    }
-
-    public int getCurrentXp() {
-        return currentXp;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getGold() {
-        return gold;
-    }
-
-    public int getNumberOfPotions() {
-        return numberOfPotions;
-    }
-
-    public int getXpGain() {
-        return xpGain;
-    }
-
-    public int getGoldGain() {
-        return goldGain;
-    }
-
-    public boolean isAlive() {
-        return currentHealth > 0;
-    }
-
-    public int attack() {
-        return random.nextInt(maxDamage - minDamage) + minDamage;
-    }
-
-
-
 }
 

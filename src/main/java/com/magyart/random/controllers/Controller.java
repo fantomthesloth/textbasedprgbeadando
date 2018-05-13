@@ -144,7 +144,7 @@ public class Controller implements Initializable {
     }
 
     public void attack(ActionEvent actionEvent) throws InterruptedException {
-        fight.fight(player,enemy,town);
+        fight.fight(enemy,town);
         playerStats();
         enemyStats();
 
@@ -155,7 +155,7 @@ public class Controller implements Initializable {
             choice();
             logFeed.setText("You have defeated [" + enemy.getName() + "]!\n\nYou have earned [" + player.getXpGain() + "xp]!\nYou have found [" + player.getGoldGain() +" gold]!");
         }
-        if (userEntity.getPlayerEntity().getCurrentHealth() == 0){
+        if (!fight.playerIsAlive()){
             attackBtn.setVisible(false);
             healBtn.setVisible(false);
             diedGif.setVisible(true);

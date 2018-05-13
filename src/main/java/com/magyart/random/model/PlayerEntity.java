@@ -8,55 +8,102 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 
+/**
+ * Class that generates the PLAYER table.
+ */
 @Slf4j
 @Entity
 @Table(name="PLAYER")
 @Data
-@EqualsAndHashCode
 @NoArgsConstructor
 public class PlayerEntity {
 
+
+    /**
+     * Primary key of the entity, automatically generated.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="ID", nullable = false, updatable = false)
     private Long id;
 
+    /**
+     * Player's name.
+     */
     @Column(name = "PLAYER_NAME")
     private String name;
 
+    /**
+     * Player's max health.
+     */
     @Column(name = "MAX_HP")
     private int maxHealth;
 
+    /**
+     * Player's current health.
+     */
     @Column(name = "ACTUAL_HP")
     private int currentHealth;
 
+    /**
+     * Player's max damage.
+     */
     @Column(name = "MAX_DMG")
     private int maxDamage;
 
+    /**
+     * Player's min damage
+     */
     @Column(name = "MIN_DMG")
     private int minDamage;
 
+    /**
+     * Number of the potions the player can hold.
+     */
     @Column(name = "POT_NUM")
     private int numberOfPotions;
 
+    /**
+     * Xp needed for the player to level up.
+     */
     @Column(name = "XP_NEEDED")
     private int xpNeeded;
 
+    /**
+     * Player's current xp.
+     */
     @Column(name = "ACTUAL_XP")
     private int currentXp;
 
+    /**
+     * Player's level.
+     */
     @Column(name = "LEVEL")
     private int level;
 
+    /**
+     * Player's gold.
+     */
     @Column(name = "GOLD")
     private int gold;
 
+    /**
+     * The amount of xp the player gets.
+     */
     @Column(name = "XP_GAIN")
     private int xpGain;
 
+    /**
+     * The amount of gold the player gets.
+     */
     @Column(name= "GOLD_GAIN")
     private int goldGain;
 
+    /**
+     * Constructor of this class.
+     *
+     * @param player - Instance of {@link Player}.
+     */
     public PlayerEntity(Player player){
         this.name = player.getName();
         this.maxHealth = player.getMaxHealth();
