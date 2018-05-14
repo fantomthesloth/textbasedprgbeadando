@@ -163,7 +163,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void attack(ActionEvent actionEvent) throws InterruptedException {
+    public void attack(ActionEvent actionEvent) {
         fight.fight(enemy,town);
         playerStats();
         enemyStats();
@@ -172,8 +172,8 @@ public class Controller implements Initializable {
         logFeed.appendText("\nYou were hit for [" + fight.getEnemyDamage() + "] damage!");
 
         if (!enemy.isAlive()) {
+            logFeed.setText("You have defeated [" + enemy.getName() + "]!\n\nYou have earned [" + userEntity.getPlayerEntity().getXpGain() + "xp]!\nYou have found [" + userEntity.getPlayerEntity().getGoldGain() +" gold]!");
             choice();
-            logFeed.setText("You have defeated [" + enemy.getName() + "]!\n\nYou have earned [" + player.getXpGain() + "xp]!\nYou have found [" + player.getGoldGain() +" gold]!");
         }
         if (!fight.playerIsAlive()){
             attackBtn.setVisible(false);
