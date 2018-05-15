@@ -29,7 +29,7 @@
                   </HBox>
                         <HBox alignment="CENTER_RIGHT">
                             <children>
-                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="34.0" style="-fx-background-color: #5e5e5e; -fx-text-fill: white; -fx-border-width: 0px 0px 3px 0px; -fx-border-color: #e02828; -fx-font-family: Verdana;" text="Signup">
+                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="74.0" styleClass="highlightButton" stylesheets="@../CSS/style.css" text="Signup">
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
@@ -37,7 +37,7 @@
                                         <Font size="15.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="toLogin" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#switchLogin" styleClass="normalButton" stylesheets="@../CSS/style.css" text="Login">
+                                <Button fx:id="toLogin" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#switchLogin" prefHeight="32.0" prefWidth="62.0" styleClass="normalButton" stylesheets="@../CSS/style.css" text="Login">
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>

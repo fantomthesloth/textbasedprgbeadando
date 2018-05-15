@@ -16,9 +16,9 @@
    <children>
       <HBox alignment="CENTER" layoutX="-1.0" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="76.0" prefWidth="360.0" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #191919;">
+                  <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="360.0" style="-fx-background-color: #191919;">
                      <children>
                         <Button fx:id="closeButton" alignment="TOP_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#closeApp" styleClass="closeButton" stylesheets="@../CSS/style.css" text="X" textOverrun="CLIP">
                            <font>
@@ -28,7 +28,7 @@
                      </children></HBox>
                   <HBox alignment="CENTER_RIGHT">
                      <children>
-                        <Button fx:id="toSignup" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#switchSignup" styleClass="normalButton" stylesheets="@../CSS/style.css" text="Signup">
+                        <Button fx:id="toSignup" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#switchSignup" prefHeight="32.0" prefWidth="74.0" styleClass="normalButton" stylesheets="@../CSS/style.css" text="Signup">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -36,7 +36,7 @@
                               <Font size="15.0" />
                               </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #5e5e5e; -fx-text-fill: white; -fx-border-width: 0px 0px 3px 0px; -fx-border-color: #e02828; -fx-background-radius: 2px; -fx-font-family: Verdana;" stylesheets="@../CSS/style.css" text="Login">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="62.0" styleClass="highlightButton" stylesheets="@../CSS/style.css" text="Login">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -81,7 +81,7 @@
                   <PasswordField fx:id="txtLoginPswd" alignment="CENTER" prefHeight="25.0" prefWidth="254.0" promptText="Password" styleClass="textField" stylesheets="@../CSS/style.css" />
                </children>
             </HBox>
-            <Button fx:id="btnLogin" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#logIn" prefWidth="300.0" styleClass="normalButton" stylesheets="@../CSS/style.css" text="Enter">
+            <Button fx:id="btnLogin" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#logIn" prefHeight="32.0" prefWidth="307.0" styleClass="normalButton" stylesheets="@../CSS/style.css" text="Enter">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

@@ -22,6 +22,8 @@ package com.magyart.random.controllers;
 
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.DB.Manager;
+import com.magyart.random.Main;
+import com.magyart.random.model.UserEntity;
 import com.magyart.random.service.UserServiceImpl;
 import com.magyart.random.service.service.UserService;
 import javafx.event.ActionEvent;
