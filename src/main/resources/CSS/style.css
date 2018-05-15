@@ -94,3 +94,13 @@
     -fx-font-family: Verdana;
     -fx-font-size: 12;
 }
+
+.welcomeLabel{
+    -fx-font-family: Verdana;
+    -fx-font-size: 35;
+}
+
+.welcomeLabel2{
+    -fx-font-family: Verdana;
+    -fx-font-size: 20;
+}
