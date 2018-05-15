@@ -39,7 +39,7 @@ public class Town {
     private int upgradeWeapon;
 
     /**
-     * Constructor of the Town class
+     * Constructor of the Town class.
      */
     public Town() {
         this.healUp = 10;

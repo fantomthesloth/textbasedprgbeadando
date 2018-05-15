@@ -72,7 +72,7 @@ public class PlayerEntity {
     private int maxDamage;
 
     /**
-     * Player's min damage
+     * Player's min damage.
      */
     @Column(name = "MIN_DMG")
     private int minDamage;

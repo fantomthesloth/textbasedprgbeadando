@@ -30,9 +30,6 @@ import java.util.Random;
 @Data
 public class Enemy {
 
-    /**
-     * String containing
-     */
     private String name;
     private int maxHealth;
     private int currentHealth;

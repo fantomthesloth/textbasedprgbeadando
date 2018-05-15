@@ -267,7 +267,7 @@
                 <version>3.0.0</version>
                 <configuration>
                     <configLocation>${basedir}/src/main/resources/Checkstyle/checkstyle.xml</configLocation>
-                    <excludes>com.magyart.random.controllers.*</excludes>
+                    <excludes>com/magyart/random/controllers/*</excludes>
                 </configuration>
             </plugin>
             <plugin>
