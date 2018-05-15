@@ -72,7 +72,7 @@ public class Enemy {
      *
      * @param enemy - Instance of the {@link Enemy}.
      */
-    public void bandit(Enemy enemy){
+    private void bandit(Enemy enemy){
         enemy.setName("Bandit");
         enemy.setMaxHealth(40);
         setCurrentHealth(getMaxHealth());
@@ -85,7 +85,7 @@ public class Enemy {
      *
      * @param enemy - Instance of the {@link Enemy}.
      */
-    public void necromancer(Enemy enemy){
+    private void necromancer(Enemy enemy){
         enemy.setName("Necromancer");
         enemy.setMaxHealth(30);
         setCurrentHealth(getMaxHealth());

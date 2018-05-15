@@ -6,7 +6,7 @@
 
     <groupId>hu.unideb.inf.pk</groupId>
     <artifactId>random</artifactId>
-    <version>0.7</version>
+    <version>0.9</version>
 
     <name>Random</name>
     <description>A text-based rpg game.</description>
@@ -55,7 +55,7 @@
         <mainClass>com.magyart.random.Main</mainClass>
 
         <!-- Maven teszt fázis futtatás kikapcsolása-->
-        <maven.test.skip>true</maven.test.skip>
+        <maven.test.skip>false</maven.test.skip>
 
         <!-- JavaFX futtatás argumentumok -->
         <runfx.args>-jar "${project.build.directory}/${project.build.finalName}.jar"</runfx.args>
@@ -117,6 +117,13 @@
             <version>5.0.3</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.18.3</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -162,9 +169,24 @@
                 <version>2.5</version>
             </plugin>
             <plugin>
-                <groupId>org.openclover</groupId>
-                <artifactId>clover-maven-plugin</artifactId>
-                <version>4.2.1</version>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.0</version>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -248,13 +270,9 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.openclover</groupId>
-                <artifactId>clover-maven-plugin</artifactId>
-                <version>4.2.0</version>
-                <configuration>
-                    <generatePdf>true</generatePdf>
-                    <generateHtml>true</generateHtml>
-                </configuration>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.0</version>
             </plugin>
         </plugins>
     </reporting>

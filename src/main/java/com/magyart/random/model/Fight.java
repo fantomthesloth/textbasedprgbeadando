@@ -129,7 +129,7 @@ public class Fight {
      * Heals the player. Changes the player's health according to their current health and number of potions.
      */
     public void heal() {
-        if (userEntity.getPlayerEntity().getCurrentHealth() > 0 && userEntity.getPlayerEntity().getNumberOfPotions() > 0) {
+        if (playerIsAlive() && userEntity.getPlayerEntity().getNumberOfPotions() > 0) {
             if (userEntity.getPlayerEntity().getCurrentHealth() == userEntity.getPlayerEntity().getMaxHealth()) {
                 userEntity.getPlayerEntity().setCurrentHealth(userEntity.getPlayerEntity().getMaxHealth());
             }

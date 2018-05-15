@@ -31,8 +31,12 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 
+/**
+ * Class containing the main method, used to launch JavaFX, set up the database, and to close it.
+ */
 public class Main  extends Application {
 
+    
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
@@ -43,14 +47,27 @@ public class Main  extends Application {
     }
 
 
+    /**
+     * The main method.
+     *
+     * @param args - command line argument
+     */
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     * Starts the database.
+     */
     public void init(){
         Manager.getInstance();
     }
 
+    /**
+     * Closes the database.
+     *
+     * @throws Exception
+     */
     public void stop() throws Exception {
         Manager.getInstance().close();
         super.stop();

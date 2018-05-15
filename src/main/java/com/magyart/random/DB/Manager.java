@@ -27,7 +27,7 @@ import javax.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * A singleton class the manages the database.
+ * A class that manages the database.
  */
 @Slf4j
 public class Manager implements AutoCloseable {
