@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="400.0" prefWidth="360.0" styleClass="background" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magyart.random.controllers.Signup">
+<AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="396.0" prefWidth="360.0" styleClass="background" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magyart.random.controllers.Signup">
       <children>
           <HBox alignment="CENTER" prefHeight="69.0" prefWidth="423.0" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
@@ -29,7 +29,7 @@
                   </HBox>
                         <HBox alignment="CENTER_RIGHT">
                             <children>
-                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #5e5e5e; -fx-text-fill: white; -fx-border-width: 0px 0px 3px 0px; -fx-border-color: #e02828;" text="Signup">
+                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="34.0" style="-fx-background-color: #5e5e5e; -fx-text-fill: white; -fx-border-width: 0px 0px 3px 0px; -fx-border-color: #e02828; -fx-font-family: Verdana;" text="Signup">
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>

@@ -26,12 +26,14 @@
 .text-area, .text-area .viewport, .text-area .content {
     -fx-text-fill: lightgrey;
     -fx-background-color: #4c4c4c ;
+    -fx-font-family: Verdana;
 }
 
 .closeButton{
     -fx-background-color: transparent;
     -fx-text-fill: red;
     -fx-background-radius: 0px;
+    -fx-font-family: Verdana;
 }
 .closeButton:hover{
     -fx-background-color: red;
@@ -43,6 +45,7 @@
     -fx-text-fill: white;
     -fx-border-width: 0px 0px 3px 0px;
     -fx-border-color: #ad0f0f;
+    -fx-font-family: Verdana;
 }
 
 .normalButton:hover{
@@ -57,4 +60,5 @@
     -fx-text-fill: white;
     -fx-border-width: 0px 0px 2px 0px;
     -fx-border-color: #ad0f0f;
+    -fx-font-family: Verdana;
 }

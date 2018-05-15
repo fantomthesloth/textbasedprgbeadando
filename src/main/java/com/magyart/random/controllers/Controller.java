@@ -127,6 +127,7 @@ public class Controller implements Initializable {
         restartBtn.setVisible(false);
         diedGif.setVisible(false);
 
+
         setUpEnemy(enemy);
         town.setUpTown();
         playerStats();
