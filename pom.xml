@@ -10,6 +10,7 @@
 
     <name>Random</name>
     <description>A text-based rpg game.</description>
+    <packaging>jar</packaging>
 
     <organization>
         <name>University of Debrecen</name>

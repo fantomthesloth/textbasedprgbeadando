@@ -23,11 +23,12 @@ package com.magyart.random.service;
 import com.magyart.random.DAO.UserDAOImpl;
 import com.magyart.random.model.UserEntity;
 import com.magyart.random.service.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class implementing {@link UserService} interface.
  */
-
+@Slf4j
 public class UserServiceImpl implements UserService {
 
     /**
@@ -75,6 +76,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void registerUser(UserEntity userEntity) {
         userDAO.persist(userEntity);
+        log.info("User registered!");
     }
 
     /**

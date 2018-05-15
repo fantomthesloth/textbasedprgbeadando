@@ -71,7 +71,10 @@ public class Controller implements Initializable {
     public Label welcome1;
     @FXML
     public Label welcome2;
+    @FXML
     public ImageView diedGif;
+
+    private String playerName;
 
     private Player player = new Player();
     private Enemy enemy = new Enemy();
@@ -145,6 +148,7 @@ public class Controller implements Initializable {
                 playerStatTA.setVisible(true);
 
                 userEntity.getPlayerEntity().setName(namer.getText());
+                playerName = namer.getText();
                 player.setName(namer.getText());
                 inTown();
                 playerStats();
@@ -189,6 +193,7 @@ public class Controller implements Initializable {
 
                 PlayerEntity playerEntity = new PlayerEntity(player);
                 userEntity.setPlayerEntity(playerEntity);
+                userEntity.getPlayerEntity().setName(playerName);
                 playerStats();
                 inTown();
             });
